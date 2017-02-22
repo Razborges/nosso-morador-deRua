@@ -1,5 +1,6 @@
 var app = require('./config/server');
+var port = 8000;
 
-app.listen(8000, function(){
-    console.log('***Servidor Morador de Rua ONLINE***');
+app.listen(port, function(){
+    console.log('*** Servidor Morador de Rua ONLINE PORTA ' + port + ' ***');
 });

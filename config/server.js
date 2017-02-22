@@ -12,8 +12,8 @@ app.set('views', './app/views');
 app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(expressValidator());
-app.use(multipart);
+app.use(validator());
+app.use(multipart());
 
 consign()
     .include('app/routes')
