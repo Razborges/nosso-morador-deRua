@@ -1,5 +1,7 @@
 exports.listar = function(application, req, res){
-        res.render('listagem_morador', { moradores : result });
+    var conn = application.config.dbMongo;
+    var moradorDao = new application.app.models.MoradorDAO(conn);
+    moradorDao.listar(res);
 }
 
 exports.cadastro = function(application, req, res){
@@ -20,56 +22,43 @@ exports.cadastrar = function(application, req, res){
 
     var conn = application.config.dbMongo;
     var moradorDao = new application.app.models.MoradorDAO(conn);
+    moradorDao.cadastrar(dadosForm, res);
+}
 
-    moradorDao.cadastrar(dadosForm);
-
-    res.send('podemos cadastrar')
-    //res.redirect('/morador');
+exports.buscar = function(application, req, res){
+    var id = req.params.id;
+    var conn = application.config.dbMongo;
+    var moradorDao = new application.app.models.MoradorDAO(conn);
+    moradorDao.buscar(id, res);
 }
 
 exports.editar = function(application, req, res){
-    res.render('editar_morador', { morador: result });
+    var id = req.params.id;
+    var conn = application.config.dbMongo;
+    var moradorDao = new application.app.models.MoradorDAO(conn);
+    moradorDao.editar(id, res);
 }
 
 exports.atualizar = function(application, req, res){
-    res.redirect('/morador');
-}
-
-exports.remover = function(application, req, res){
-    res.redirect('/morador');
-}
-
-/*
-module.exports.cadastro = function(app, req, res) {
-    res.render('cadastro_morador', { validacao : {}, data : {} });
-};
-
-module.exports.cadastrar = function(app, req, res){
     var dadosForm = req.body;
 
     req.assert('nome', 'É obrigatório o preenchimento do nome').notEmpty();
-    req.assert('nome', 'O nome precisa ter entre 3 e 100 caracteres').len(3, 100);
-    req.assert('cidade', 'É obrigatório o preenchimento do nome da Cidade').notEmpty();
-    req.assert('cidade', 'O nome da Cidade deve ter entre 3 a 60 caracteres').len(3, 60);
-    req.assert('uf', 'O preenchimento do Estado/UF é obrigatório com 2 caracteres').notEmpty().len(2, 2);
-    req.assert('historico', 'Conte um pouco da história deste morador de rua.').notEmpty();
 
-    var errorValidacao = req.validationErrors();
+    var erros = req.validationErrors();
 
-    if (errorValidacao) {
-        res.render('cadastro_morador', { validacao : errorValidacao, data : dadosForm });
+    if(erros){
+        res.render('morador_atualizar', { validacao: erros, morador: dadosForm });
         return;
     }
 
-    var conn = app.config.dbMongo;
+    var conn = application.config.dbMongo;
+    var moradorDao = new application.app.models.MoradorDAO(conn);
+    moradorDao.atualizar(dadosForm, res);
+}
 
-    console.log(conn);
-    var moradorDao = new app.app.models.MoradorDAO(conn);
-    console.log(4);
-    moradorDao.inserirMorador(dadosForm);
-    console.log(5);
-    console.log(moradorDao);
-    console.log('chegou na listagem de morador de rua');
-    //res.render('listagem_morador');
-};
-*/
+exports.remover = function(application, req, res){
+    var id = req.params.id;
+    var conn = application.config.dbMongo;
+    var moradorDao = new application.app.models.MoradorDAO(conn);
+    moradorDao.remover(id, res);
+}

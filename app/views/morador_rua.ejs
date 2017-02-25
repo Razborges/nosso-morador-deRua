@@ -1,0 +1,22 @@
+<%- include('basic/header'); %>
+    
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Histórico</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= morador._id %></td>
+                <td><%= morador.nome %></td>
+                <td><%= morador.cidade %></td>
+                <td><%= morador.uf %></td>
+                <td><%= morador.historico %></td>
+            </tr>
+        </tbody>
+    </table>
+
+<%- include('basic/footer'); %>

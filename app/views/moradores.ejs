@@ -1,0 +1,30 @@
+<%- include('basic/header'); %>
+    
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Editar</th>
+            <th>Remover</th>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < moradores.length; i++) { %>
+            <tr>
+                <td><%= moradores[i]._id %></td>
+                <td><%= moradores[i].nome %></td>
+                <td><%= moradores[i].cidade %></td>
+                <td><%= moradores[i].uf %></td>
+                <td><a href="/morador/editar/<%= moradores[i]._id %>" >Editar</a></td>
+                <td>
+                    <form method="POST" action="/morador/remover/<%= moradores[i]._id %>">
+                        <button type="submit">Apagar</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+<%- include('basic/footer'); %>
