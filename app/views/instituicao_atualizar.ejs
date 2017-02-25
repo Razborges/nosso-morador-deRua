@@ -1,0 +1,16 @@
+<%- include('basic/header'); %>
+
+    <form action="/instituicao/<%= instituicao._id %>" method="post">
+        <input type="hidden" name="_id" value="<%= instituicao._id %>">
+        <label for="nome">Nome Instituição</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome da instituição" value="<%= instituicao.nome %>">
+        <label for="responsavel">Contato da Instituição</label>
+        <input type="text" id="responsavel" name="responsavel" placeholder="Responsável pela Instituição" value="<%= instituicao.responsavel %>">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="responsavel@instituica.com.br" value="<%= instituicao.email %>">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" value="<%= instituicao.telefone %>">
+        <button type="submit">Atualizar</button>
+    </form>
+
+<%- include('basic/footer'); %>

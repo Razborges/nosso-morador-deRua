@@ -1,6 +1,6 @@
 <%- include('basic/header'); %>
     
-    <form method="POST" action="/morador/<%= morador._id %>" enctype="application/x-www-form-urlencoded">
+    <form method="POST" action="/morador/<%= morador._id %>">
         <input type="hidden" name="_id" value="<%= morador._id %>">
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" placeholder="Nome do Morador de Rua que deseja cadastrar" value="<%= morador.nome %>">
