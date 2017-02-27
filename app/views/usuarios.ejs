@@ -1,0 +1,30 @@
+<%- include('basic/header'); %>
+    
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Senha</th>
+            <th>Editar</th>
+            <th>Apagar</th>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < usuarios.length; i++) { %>
+            <tr>
+                <td><%= usuarios[i]._id %></td>
+                <td><%= usuarios[i].nome %></td>
+                <td><%= usuarios[i].email %></td>
+                <td><%= usuarios[i].senha %></td>
+                <td><a href="/usuario/editar/<%= usuarios[i]._id %>" >Editar</a></td>
+                <td>
+                    <form method="POST" action="/usuario/remover/<%= usuarios[i]._id %>">
+                        <button type="submit">Apagar</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+<%- include('basic/footer'); %>
