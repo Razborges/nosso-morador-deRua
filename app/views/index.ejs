@@ -7,7 +7,7 @@
         </div>
         <div class="o-form cadastro">
             <h3>Preencha para se cadastrar</h3>
-            <form class="o-form">
+            <form class="o-form" action="/usuario" method="post">
                 <div class="form-barra">
                     <label type="hidden" for="nome"></label>
                     <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="" autofocus>
@@ -25,131 +25,46 @@
     <div>
         <section>
             <h1>Últimas histórias adicionadas</h1>
-            <div class="o-descricao">
-                <div class="retrato">
-                    <img src="" alt="Retrato do morador de rua NOME-AQUI">
-                </div>
-                <div class="o-descricao_detalhe">
-                    <div class="detalhe_nome">
-                        <h2>José Linhares</h2>
-                        <p class="txt-secundario">Rio de Janeiro</p>
+            <% for(var i = 0; i < moradores.length; i++) { %>
+                <div class="o-descricao">
+                    <div class="retrato">
+                        <img src="" alt="Retrato do morador de rua <%= moradores[i].nome %>">
                     </div>
-                    <div>
-                        <p>Nascido em João Pessoa/PB</p>
-                    </div>
-                    <div class="o-descricao_necessidades">
-                        <table>
-                            <th class="titulo-destaque">Necessidades Atuais</th>
-                            <tr>
-                                <td>Documentos</td>
-                            </tr>
-                            <tr>
-                                <td>Ajuda de Custo</td>
-                            </tr>
-                            <tr>
-                                <td>Alimentação</td>
-                            </tr>
-                            <tr>
-                                <td>Água potável</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="o-descricao_historico">
-                    <h4 class="titulo-secundario">Minha história:</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore maiores fugit illo ipsam incidunt a illum dolor veniam nesciunt esse sit iusto et, voluptatem, reprehenderit? A quod atque laudantium.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste.</p>
-                    <div class="historico_link">
-                        <a class="btn-destaque_link" href="">Veja mais...</a>
-                    </div>
-                </div>
-            </div>
+                    <div class="o-descricao_detalhe">
+                        <div class="detalhe_nome">
+                            <h2><%= moradores[i].nome %></h2>
+                            <p class="txt-secundario"><%= moradores[i].cidade %>/<%= moradores[i].uf %></p>
+                        </div>
+                        <div>
+                            <p><%= moradores[i].origem %></p>
+                        </div>
+                        <div class="o-descricao_necessidades">
 
-            <!--RETIRAR DEPOIS TODO ESSE TRECHO DE REPETICAO-->
-            <div class="o-descricao">
-                <div class="retrato">
-                    <img src="" alt="Retrato do morador de rua NOME-AQUI">
-                </div>
-                <div class="o-descricao_detalhe">
-                    <div class="detalhe_nome">
-                        <h2>José Linhares</h2>
-                        <p class="txt-secundario">Rio de Janeiro</p>
-                    </div>
-                    <div>
-                        <p>Nascido em João Pessoa/PB</p>
-                    </div>
-                    <div class="o-descricao_necessidades">
-                        <table>
-                            <th class="titulo-destaque">Necessidades Atuais</th>
-                            <tr>
-                                <td>Documentos</td>
-                            </tr>
-                            <tr>
-                                <td>Ajuda de Custo</td>
-                            </tr>
-                            <tr>
-                                <td>Alimentação</td>
-                            </tr>
-                            <tr>
-                                <td>Água potável</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="o-descricao_historico">
-                    <h4 class="titulo-secundario">Minha história:</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore maiores fugit illo ipsam incidunt a illum dolor veniam nesciunt esse sit iusto et, voluptatem, reprehenderit? A quod atque laudantium.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste.</p>
-                    <div class="historico_link">
-                        <a class="btn-destaque_link" href="">Veja mais...</a>
-                    </div>
-                </div>
-                <hr/>
-            </div>
-            <div class="o-descricao">
-                <div class="retrato">
-                    <img src="" alt="Retrato do morador de rua NOME-AQUI">
-                </div>
-                <div class="o-descricao_detalhe">
-                    <div class="detalhe_nome">
-                        <h2>José Linhares</h2>
-                        <p class="txt-secundario">Rio de Janeiro</p>
-                    </div>
-                    <div>
-                        <p>Nascido em João Pessoa/PB</p>
-                    </div>
-                    <div class="o-descricao_necessidades">
-                        <table>
-                            <th class="titulo-destaque">Necessidades Atuais</th>
-                            <tr>
-                                <td>Documentos</td>
-                            </tr>
-                            <tr>
-                                <td>Ajuda de Custo</td>
-                            </tr>
-                            <tr>
-                                <td>Alimentação</td>
-                            </tr>
-                            <tr>
-                                <td>Água potável</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="o-descricao_historico">
-                    <h4 class="titulo-secundario">Minha história:</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore maiores fugit illo ipsam incidunt a illum dolor veniam nesciunt esse sit iusto et, voluptatem, reprehenderit? A quod atque laudantium.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste.</p>
-                    <div class="historico_link">
-                        <a class="btn-destaque_link" href="">Veja mais...</a>
-                    </div>
-                </div>
-                <hr/>
-            </div>
+                            <% if(moradores[i].necessidades) { %>
+                                <table>
+                                    <th class="titulo-destaque">Necessidades Atuais</th>
+                                    <% for(var j = 0; j < moradores[i].necessidades.length; j++) { %>
+                                        <tr>
+                                            <td><%= moradores[i].necessidades[j] %></td>
+                                        </tr>
+                                    <% } %>
+                                </table>
+                            <% } %>
 
+                        </div>
+                    </div>
+                    <div class="o-descricao_historico">
+                        <h4 class="titulo-secundario">Minha história:</h4>
+                        <p><%= moradores[i].historico %></p>
+                        <div class="historico_link">
+                            <a class="btn-destaque_link" href="/morador/<%= moradores[i]._id %>">Veja mais...</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
         </section>
         <div class="o-section_fechamento">
-            <a class="btn-destaque_link btn-xgd" href="">Conheça outras histórias</a>
+            <a class="btn-destaque_link btn-xgd" href="/morador">Conheça outras histórias</a>
         </div>
     </div>
     <div class="o-quemsomos">

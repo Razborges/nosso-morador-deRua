@@ -22,4 +22,8 @@ module.exports = function(application){
     application.post('/usuario/remover/:id', function(req, res){
         application.app.controllers.usuarioController.remover(application, req, res);
     });
+
+    application.get('/usuario/:id', function(req, res){
+        application.app.controllers.usuarioController.detalhe(application, req, res);
+    });
 }

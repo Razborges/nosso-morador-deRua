@@ -13,7 +13,7 @@
         </div>
         <div class="o-form cadastro">
             <h3>Preencha para cadastrar</h3>
-            <form class="o-form">
+            <form class="o-form" method="post" action="/morador">
                 <div class="form-barra">
                     <label type="hidden" for="nome"></label>
                     <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="" autofocus>
@@ -54,7 +54,7 @@
                     </div>
                     <label type="hidden" for="origem"></label>
                     <input class="inp-gd" type="text" id="origem" name="origem" placeholder="Cidade de origem" value="">
-                    <textarea rows="4" cols="39" placeholder="Conte a história dele..."></textarea>
+                    <textarea id="historico" name="historico" rows="4" cols="39" placeholder="Conte a história dele..."></textarea>
                     <div class="inputfile">
                         <label for="foto">Clique para adicionar fotos</label>
                         <input type="file" id="foto" name="foto">

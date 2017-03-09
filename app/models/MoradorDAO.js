@@ -7,19 +7,19 @@ function MoradorDAO(connection){
 MoradorDAO.prototype.cadastrar = function(morador, res){
     this._connection.open(function(err, mongoClient){
         if(err){
-            console.log('Erro1 =====>', err);
+            console.log(err);
             return;
         }
         mongoClient.collection('morador_rua', function(err, collection){
             if(err) {
                 mongoClient.close();
-                console.log('Erro2 =====>', err);
+                console.log(err);
                 return;
             }
             collection.insert(morador, function(err, result){
                 if(err) {
                     mongoClient.close();
-                    console.log('Erro3 =====>', err);
+                    console.log(err);
                     return;
                 }
                 var id = result.ops[0]._id;
@@ -33,19 +33,19 @@ MoradorDAO.prototype.cadastrar = function(morador, res){
 MoradorDAO.prototype.listar = function(res){
     this._connection.open(function(err, mongoClient){
         if(err){
-            console.log('Erro1 =====>', err);
+            console.log(err);
             return;
         }
         mongoClient.collection('morador_rua', function(err, collection){
             if(err) {
                 mongoClient.close();
-                console.log('Erro2 =====>', err);
+                console.log(err);
                 return;
             }
             collection.find().toArray(function(err, result){
                 if(err){
                     mongoClient.close();
-                    console.log('Erro3 =====>', err);
+                    console.log(err);
                     return;
                 }
                 res.render('moradores', { moradores : result });
@@ -58,22 +58,22 @@ MoradorDAO.prototype.listar = function(res){
 MoradorDAO.prototype.buscar = function(id, res){
     this._connection.open(function(err, mongoClient){
         if(err){
-            console.log('Erro1 =====>', err);
+            console.log(err);
             return;
         }
         mongoClient.collection('morador_rua', function(err, collection){
             if(err) {
                 mongoClient.close();
-                console.log('Erro2 =====>', err);
+                console.log(err);
                 return;
             }
             collection.find(objectId(id)).toArray(function(err, result){
                 if(err){
                     mongoClient.close();
-                    console.log('Erro3 =====>', err);
+                    console.log(err);
                     return;
                 }
-                res.render('morador_rua', { morador : result[0] });
+                res.render('morador', { morador : result[0] });
                 mongoClient.close();
             });
         });
@@ -83,19 +83,19 @@ MoradorDAO.prototype.buscar = function(id, res){
 MoradorDAO.prototype.editar = function(id, res){
     this._connection.open(function(err, mongoClient){
         if(err){
-            console.log('Erro1 =====>', err);
+            console.log(err);
             return;
         }
         mongoClient.collection('morador_rua', function(err, collection){
             if(err) {
                 mongoClient.close();
-                console.log('Erro2 =====>', err);
+                console.log(err);
                 return;
             }
             collection.find(objectId(id)).toArray(function(err, result){
                 if(err){
                     mongoClient.close();
-                    console.log('Erro3 =====>', err);
+                    console.log(err);
                     return;
                 }
                 res.render('morador-atualizar', { morador : result[0] });
@@ -110,13 +110,13 @@ MoradorDAO.prototype.atualizar = function(morador, res){
     delete morador._id;
     this._connection.open(function(err, mongoClient){
         if(err){
-            console.log('Erro1 =====>', err);
+            console.log(err);
             return;
         }
         mongoClient.collection('morador_rua', function(err, collection){
             if(err) {
                 mongoClient.close();
-                console.log('Erro2 =====>', err);
+                console.log(err);
                 return;
             }
             collection.update(
@@ -126,7 +126,7 @@ MoradorDAO.prototype.atualizar = function(morador, res){
                 function(err, result){
                     if(err) {
                         mongoClient.close();
-                        console.log('Erro3 =====>', err);
+                        console.log(err);
                         return;
                     }
                     mongoClient.close();
@@ -139,19 +139,19 @@ MoradorDAO.prototype.atualizar = function(morador, res){
 MoradorDAO.prototype.remover = function(id, res){
     this._connection.open(function(err, mongoClient){
         if(err){
-            console.log('Erro1 =====>', err);
+            console.log(err);
             return;
         }
         mongoClient.collection('morador_rua', function(err, collection){
             if(err) {
                 mongoClient.close();
-                console.log('Erro2 =====>', err);
+                console.log(err);
                 return;
             }
             collection.remove({ _id : objectId(id) }, function(err, result){
                 if(err){
                     mongoClient.close();
-                    console.log('Erro3 =====>', err);
+                    console.log(err);
                     return;
                 }
                 res.redirect('/morador');
@@ -159,6 +159,31 @@ MoradorDAO.prototype.remover = function(id, res){
             });
         });
     }); 
+}
+
+MoradorDAO.prototype.home = function(res){
+    this._connection.open(function(err, mongoClient){
+        if(err){
+            console.log(err);
+            return;
+        }
+        mongoClient.collection('morador_rua', function(err, collection){
+            if(err) {
+                mongoClient.close();
+                console.log(err);
+                return;
+            }
+            collection.find().hint({ $natural: -1 }).limit(3).toArray(function(err, result){
+                if(err){
+                    mongoClient.close();
+                    console.log(err);
+                    return;
+                }
+                res.render('index', { moradores : result });
+                mongoClient.close();
+            });
+        });
+    });
 }
 
 module.exports = function(){

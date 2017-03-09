@@ -20,6 +20,10 @@ module.exports.cadastrar = function(application, req, res){
         return;
     }
 
+    dadosForm.necessidades = [];
+    var data_cadastro = new Date();
+    dadosForm.data_cadastro = data_cadastro;
+
     var conn = application.config.dbMongo;
     var moradorDao = new application.app.models.MoradorDAO(conn);
     moradorDao.cadastrar(dadosForm, res);

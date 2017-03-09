@@ -41,14 +41,15 @@ UsuarioDAO.prototype.cadastrar = function(usuario, res){
                 console.log(err);
                 return;
             }
-            collection.insert(usuario, function(err){
+            collection.insert(usuario, function(err, result){
                 if(err){
                     mongoClient.close();
                     console.log(err);
                     return;
                 }
+                var id = result.ops[0]._id;
                 mongoClient.close();
-                res.redirect('/usuarios');
+                res.redirect('/usuario/' + id);
             });
         });
     });
@@ -130,6 +131,31 @@ UsuarioDAO.prototype.remover = function(id, res){
                     return;
                 }
                 res.redirect('/usuarios');
+                mongoClient.close();
+            });
+        });
+    }); 
+}
+
+UsuarioDAO.prototype.detalhe = function(id, res){
+    this._connection.open(function(err, mongoClient){
+        if(err){
+            console.log(err);
+            return;
+        }
+        mongoClient.collection('usuario', function(err, collection){
+            if(err) {
+                mongoClient.close();
+                console.log(err);
+                return;
+            }
+            collection.find(objectId(id)).toArray(function(err, result){
+                if(err){
+                    mongoClient.close();
+                    console.log(err);
+                    return;
+                }
+                res.render('usuario', { usuario : result[0] });
                 mongoClient.close();
             });
         });

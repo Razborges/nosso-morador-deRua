@@ -1,0 +1,28 @@
+<%- include('modelos/header'); %>
+
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Senha</th>
+            <th>Editar</th>
+            <th>Apagar</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= usuario._id %></td>
+                <td><%= usuario.nome %></td>
+                <td><%= usuario.email %></td>
+                <td><%= usuario.senha %></td>
+                <td><a href="/usuario/editar/<%= usuario._id %>" >Editar</a></td>
+                <td>
+                    <form method="POST" action="/usuario/remover/<%= usuario._id %>">
+                        <button type="submit">Apagar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<%- include('modelos/footer'); %>

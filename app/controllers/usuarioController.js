@@ -54,3 +54,10 @@ module.exports.remover = function(application, req, res){
     var usuarioDAO = new application.app.models.UsuarioDAO(conn);
     usuarioDAO.remover(id, res);
 }
+
+module.exports.detalhe = function(application, req, res){
+    var id = req.params.id;
+    var conn = application.config.dbMongo;
+    var usuarioDAO = new application.app.models.UsuarioDAO(conn);
+    usuarioDAO.detalhe(id, res);
+}
