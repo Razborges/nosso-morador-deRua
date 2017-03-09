@@ -1,0 +1,26 @@
+<%- include('modelos/header'); %>
+
+    <div class="o-apresentacao">
+        <div class="abertura">
+            <img class="o-apresentacao_logo" src="imagens/logo.png" alt="Logotipo Nosso Morador de Rua" width="276px" height="90px">
+            <h3>Cadastre-se e ajude pessoas que precisam de você.</h3>
+        </div>
+        <div class="o-form cadastro">
+            <h3>Preencha para se cadastrar</h3>
+            <form class="o-form">
+                <div class="form-barra">
+                    <label type="hidden" for="nome"></label>
+                    <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="" autofocus>
+                    <label type="hidden" for="email"></label>
+                    <input class="inp-gd" type="email" id="email" name="email" placeholder="E-mail" value="">
+                    <label type="hidden" for="senha"></label>
+                    <input class="inp-gd" type="password" id="senha" name="senha" placeholder="Senha" value="">
+                    <label type="hidden" for="re_senha"></label>
+                    <input class="inp-gd" type="password" id="re_senha" name="re_senha" placeholder="Digite a senha novamente" value="">
+                </div>
+                <button class="btn-destaque" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+<%- include('modelos/footer'); %>

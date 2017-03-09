@@ -1,0 +1,108 @@
+<%- include('modelos/header'); %>
+
+    <div class="o-apresentacao">
+        <div class="o-apresentacao_imagem">
+            <img id="foto-apresentacao" src="" alt="Imagem do morador de rua NOME AQUI" width="464" height="464">
+        </div>
+        <div class="o-apresentacao_info">
+            <h1>José Linhares</h1>
+            <h2 class="titulo-residente">Residente: Rio de Janeiro / RJ</h2>
+            <p>Nascido em João Pessoa</p>
+            <p class="p-resumo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam incidunt nesciunt voluptatum quas. Expedita suscipit libero natus nihil at fugit accusamus beatae in vero quia, unde dolor molestiae quo a!</p>
+            <div class="o-apresentacao_miniaturas">
+                <img class="miniatura" src="" alt="Outra imagem do morador de rua Nome Aqui" width="115" height="115">
+                <img class="miniatura" src="" alt="Mais uma imagem do morador de rua Nome Aqui" width="115" height="115">
+                <img class="miniatura" src="" alt="Uma imagem do morador de rua Nome Aqui" width="115" height="115">
+            </div>
+        </div>
+    </div>
+
+    <div class="o-detalhe">
+        <section class="o-detalhe_historia">
+            <h4 class="titulo-secundario">Minha história</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas voluptates porro, modi amet, accusantium mollitia repellat quibusdam, facilis quos eligendi aliquam doloremque dolores distinctio, laboriosam est adipisci reiciendis autem officiis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore id a sunt, numquam recusandae doloremque, quam similique itaque! Voluptas aliquam error nihil accusamus consequuntur, laborum, rem deleniti iure dolorem quod.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quis sint, at enim qui nam ducimus ut quaerat totam labore. Odio nisi est eaque dolores soluta molestias iure saepe molestiae.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores molestiae repellendus dolores accusantium perspiciatis laboriosam ad corporis. Modi quae reiciendis, atque eveniet? Qui odio eius necessitatibus perferendis pariatur deserunt. Consequatur?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero unde, delectus, voluptatibus, perspiciatis numquam blanditiis dicta perferendis aut minus magni, sed porro illo ea labore rem saepe velit molestias explicabo.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos nesciunt quas laboriosam commodi rerum numquam laborum nulla suscipit? Repellat non ipsum nesciunt placeat tempore deleniti, culpa cupiditate consequuntur veritatis reiciendis?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem corporis aliquid, quos tempore laboriosam. Hic ullam, suscipit labore quam cumque non. Illo aut, expedita, facere odit numquam quis reiciendis nisi.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus qui similique dolorum et nulla, animi voluptates quas aut modi doloribus corporis impedit neque eum quibusdam error cumque, eaque dolorem?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, eum doloribus architecto praesentium cumque, totam similique, voluptatem assumenda ducimus commodi hic, odio deleniti ipsa ad iure ab. Officia odit, numquam?</p>
+        </section>
+        <aside class="o-detalhe_necessidades">
+            <h4 class="titulo-secundario titulo-destaque">Necessidades atuais:</h4>
+            <table>
+                <tr>
+                    <td class="detalhe_tabela-necessidades">Documentos</td>
+                </tr>
+                <tr>
+                    <td class="detalhe_tabela-necessidades">Ajuda de Custo</td>
+                </tr>
+                <tr>
+                    <td class="detalhe_tabela-necessidades">Alimentação</td>
+                </tr>
+                <tr>
+                    <td class="detalhe_tabela-necessidades">Água potável</td>
+                </tr>
+            </table>
+            <form class="o-detalhe_form">
+                <label type="hidden" for="necessidade"></label>
+                <input class="inp-gd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
+                <button class="btn-destaque btn-pq" type="submit">+</button>
+            </form>
+        </aside>
+    </div>
+    <div class="o-detalhe_info">
+        <h1>Informações Sociais:</h1>
+        <table class="o-tabela-info">
+            <thead class="tabela-info_linha">
+                <th class="tabela-info_cel tabela-info_centro tabela-info_titulo"></th>
+                <th class="tabela-info_cel tabela-info_esq tabela-info_titulo">Info</th>
+                <th class="tabela-info_cel tabela-info_centro tabela-info_titulo">Instituição</th>
+                <th class="tabela-info_cel tabela-info_dir tabela-info_titulo">Data</th>
+            </thead>
+            <tbody>
+                <tr class="tabela-info_linha">
+                    <td class="tabela-info_cel tabela-info_centro tabela-info_hospital">E</td>
+                    <td class="tabela-info_cel tabela-info_esq">Atendimento hospitalar por escoriações na perna direita</td>
+                    <td class="tabela-info_cel tabela-info_centro">Hospital Souza Aguiar</td>
+                    <td class="tabela-info_cel tabela-info_dir">14/05/2015</td>
+                </tr>
+                <tr class="tabela-info_linha">
+                    <td class="tabela-info_cel tabela-info_centro tabela-info_policial">P</td>
+                    <td class="tabela-info_cel tabela-info_esq">Detido por desacato de autoridade</td>
+                    <td class="tabela-info_cel tabela-info_centro">21 Delegacia de Policia Civil</td>
+                    <td class="tabela-info_cel tabela-info_dir">14/05/2015</td>
+                </tr>
+                <tr class="tabela-info_linha">
+                    <td class="tabela-info_cel tabela-info_centro tabela-info_hospital">E</td>
+                    <td class="tabela-info_cel tabela-info_esq">Atendimento hospitalar por escoriações na perna direita</td>
+                    <td class="tabela-info_cel tabela-info_centro">Hospital Souza Aguiar</td>
+                    <td class="tabela-info_cel tabela-info_dir">14/05/2015</td>
+                </tr>
+                <tr class="tabela-info_linha">
+                    <td class="tabela-info_cel tabela-info_centro tabela-info_social">S</td>
+                    <td class="tabela-info_cel tabela-info_esq">Apoio Social de higiene pessoal</td>
+                    <td class="tabela-info_cel tabela-info_centro">XPTO ONG</td>
+                    <td class="tabela-info_cel tabela-info_dir">14/05/2015</td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <form class="o-detalhe_form">
+                <label type="hidden" for="tipo_necessidade"></label>
+                <select class="inp-border select-info" id="tipo_necessidade" name="tipo_necessidade">
+                    <option disabled selected value="">Selecione uma opção</option>
+                    <option value="H">Atendimento Hospitalar</option>
+                    <option value="P">Caso Policial</option>
+                    <option value="S">Atendimento Social</option>
+                </select>
+                <label type="hidden" for="necessidade"></label>
+                <input class="inp-xgd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
+                <button class="btn-destaque btn-pq" type="submit">+</button>
+            </form>
+        </div>
+    </div>
+
+<%- include('modelos/footer'); %>

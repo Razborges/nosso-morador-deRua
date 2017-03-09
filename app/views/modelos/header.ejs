@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nosso Morador de Rua</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8000/css/estilo.css">
+</head>
+<body>
+    <header>
+        <div class="o-header">
+            <div class="o-logo">
+                <a href="/">
+                    <img src="http://localhost:8000/imagens/logoBranco.png" alt="Logotipo Nosso Morador de Rua" width="130px" height="38px">
+                </a>
+            </div>
+            <div class="o-busca">
+                <label type="hidden" for="buscar"></label>
+                <input type="text" class="inp-md placeholder-destaque" id="buscar" name="buscar" placeholder="Buscar" value="">
+                <button type="submit">Buscar</button>
+            </div>
+            <div class="o-login">
+                <label type="hidden" for="email"></label>
+                <input type="email" id="email" name="email" placeholder="E-mail" value="">
+                <label type="hidden" for="senha"></label>
+                <input type="password" id="senha" name="senha" placeholder="Senha" value="">
+                <button type="submit">Entrar</button>
+            </div>
+        </div>
+        <nav class="o-nav">
+            <ul class="o-nav_list">
+                <li class="o-nav_item"><a class="nav-link" href="/morador/cadastro">Novo Morador de Rua</a></li>
+                <li class="o-nav_item"><a class="nav-link" href="/morador">Conhecer Moradores de Rua</a></li>
+                <li class="o-nav_item"><a class="nav-link" href="/instituicoes">Instituições</a></li>
+                <li class="o-nav_item"><a class="nav-link" href="/instituicao/cadastro">Adicionar Instituição</a></li>
+            </ul>
+        </nav>
+    </header>

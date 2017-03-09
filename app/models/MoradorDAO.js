@@ -98,7 +98,7 @@ MoradorDAO.prototype.editar = function(id, res){
                     console.log('Erro3 =====>', err);
                     return;
                 }
-                res.render('morador_atualizar', { morador : result[0] });
+                res.render('morador-atualizar', { morador : result[0] });
                 mongoClient.close();
             });
         });

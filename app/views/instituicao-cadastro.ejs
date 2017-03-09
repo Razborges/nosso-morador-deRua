@@ -1,0 +1,33 @@
+<%- include('modelos/header'); %>
+
+   <div class="o-apresentacao">
+        <div class="abertura_cadastros">
+            <h1 class="abertura_titulo">Cadastro de Instituição</h1>
+            <ul class="abertura_lista">
+                <li class="lista-abertura">Dicas:</li>
+                <li class="lista-abertura">- Cadastre a Instituição;</li>
+                <li class="lista-abertura">- Adicione o e-mail do responsável pela Instituição;</li>
+                <li class="lista-abertura">- Após o cadastro realizado poderão ser adicionados novos usuários relacionados a Instituição.</li>
+            </ul>
+        </div>
+        <div class="o-form cadastro">
+            <h3>Preencha para cadastrar</h3>
+            <form class="o-form">
+                <div class="form-barra">
+                    <label type="hidden" for="instituicao"></label>
+                    <input class="inp-gd" type="text" id="instituicao" name="instituicao" placeholder="Instituição" value="" autofocus>
+                    <label type="hidden" for="responsavel"></label>
+                    <input class="inp-gd" type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável" value="">
+                    <label type="hidden" for="email"></label>
+                    <input class="inp-gd" type="email" id="email" name="email" placeholder="E-mail do responsável" value="">
+                    <label type="hidden" for="senha"></label>
+                    <input class="inp-gd" type="password" id="senha" name="senha" placeholder="Senha" value="">
+                    <label type="hidden" for="re_senha"></label>
+                    <input class="inp-gd" type="password" id="re_senha" name="re_senha" placeholder="Digite a senha novamente" value="">
+                </div>
+                <button class="btn-destaque" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+<%- include('modelos/footer'); %>

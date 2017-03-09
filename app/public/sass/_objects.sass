@@ -1,0 +1,187 @@
+//padroes nao cosméticos - estruturas de formatacao
+
+//TOPO CABEÇALHO
+.o-header
+    width: 100%
+    height: 57px
+    background-color: $marinho
+    padding: 10px 5% 10px 5%
+    display: flex
+
+.o-logo
+    align-items: center
+
+.o-busca
+    margin-left: 5px
+    padding: 3px 0 5px 0
+    flex: 1
+    align-items: center
+
+.o-login
+    padding: 3px 0 5px 0
+    flex: -1
+    align-items: center
+
+.o-nav
+    width: 100%
+    background-color: $roxo
+    padding: 0px 5% 0px 5%
+    border: 1px solid $cloud
+
+.o-nav_list
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+
+.o-nav_item
+    width: 20%
+    flex: 1
+    text-align: center
+
+//ABERTURA E FORMS
+.o-apresentacao
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+
+.o-apresentacao_logo
+    flex: 1
+    margin-bottom: 70px
+
+.abertura,
+.abertura_cadastros
+    display: flex
+    flex-direction: column
+    flex: 1
+    width: 50%
+
+.abertura
+    justify-content: center
+    align-items: center
+
+.abertura_lista
+    align-self: center
+    width: 276px
+    text-align: left
+
+.abertura_titulo
+    align-self: center
+    width: 276px
+    text-align: right
+    border-right: 6px solid $marinho
+    padding-right: 10px
+    &:before
+        content: ''
+
+.o-form
+    display: flex
+    flex-direction: column
+    flex: 1
+    width: 50%
+    justify-content: center
+    align-items: center
+
+.o-form_cidade-uf
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    width: 340px
+
+.o-apresentacao_imagem
+    width: 50%
+    padding: 30px 30px 30px 5%
+
+.o-apresentacao_info
+    width: 50%
+    padding: 30px 5% 30px 30px
+    display: flex
+    flex-direction: column
+    align-items: baseline
+    align-self: flex-start
+
+.o-apresentacao_miniaturas
+    flex: 1
+    display: flex
+    flex-direction: row
+    align-self: center
+    margin-top: 50px
+
+//RESUMO DOS MORADORES DE RUA
+.o-descricao
+    display: flex
+    flex-direction: row
+    margin-top: 30px
+    padding-bottom: 30px
+    border-bottom: 1px solid $marinho
+
+.o-descricao_detalhe
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    padding-left: 15px
+    height: 200px
+
+.o-descricao_necessidades
+    align-self: center
+
+.o-descricao_historico
+    align-self: flex-start
+    flex: 1
+    display: flex
+    flex-direction: column
+    padding-left: 35px
+
+.historico_link
+    align-self: flex-end
+
+.o-section_fechamento
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 5%
+
+//DETALHE DOS MORADORES DE RUA
+.o-detalhe
+    display: flex
+    flex-direction: row
+
+.o-detalhe_historia
+    width: 65%
+        
+.o-detalhe_necessidades
+    width: 35%
+    margin-top: 50px
+    padding: 0 5% 0 8px
+    border-left: 5px solid $marinho
+
+.o-detalhe_form
+    display: flex
+    margin: 30px 0 0 0
+    padding-bottom: 40px
+    border-bottom: 1px solid $cinza
+
+.o-detalhe_info
+    padding: 0 5% 0 5%
+    display: flex
+    flex-direction: column
+
+.o-tabela-info
+    width: 100%
+
+//QUEM SOMOS
+.o-quemsomos
+    display: flex
+    align-items: center
+    justify-content: center
+
+//RODAPE
+.o-footer_info
+    flex: 1
+
+.o-footer_des
+    text-align: right
+    flex: 1

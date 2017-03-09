@@ -5,7 +5,7 @@ module.exports.buscar = function(application, req, res){
 }
 
 module.exports.cadastro = function(application, req, res){
-    res.render('usuario_cadastro', { validacao : {}, instituicao : {} });
+    res.render('usuario-cadastro', { validacao : {}, instituicao : {} });
 }
 
 module.exports.cadastrar = function(application, req, res){
@@ -16,7 +16,7 @@ module.exports.cadastrar = function(application, req, res){
     var erros = req.validationErrors();
 
     if(erros) {
-        res.render('usuario_cadastro', {validacao : erros, instituicao : dadosForm});
+        res.render('usuario-cadastro', {validacao : erros, instituicao : dadosForm});
         return;
     }
 
@@ -39,7 +39,7 @@ module.exports.atualizar = function(application, req, res){
     
     var erros = req.validationErrors();
     if(erros){
-        res.render('usuario_atualizar', { validacao : erros, instituicao : dadosForm});
+        res.render('usuario-atualizar', { validacao : erros, instituicao : dadosForm});
         return;
     }
 

@@ -72,7 +72,7 @@ UsuarioDAO.prototype.editar = function(id, res){
                     console.log(err);
                     return;
                 }
-                res.render('usuario_atualizar', { usuario : result[0] });
+                res.render('usuario-atualizar', { usuario : result[0] });
                 mongoClient.close();
             });
         });

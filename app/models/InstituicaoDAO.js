@@ -72,7 +72,7 @@ InstituicaoDAO.prototype.editar = function(id, res){
                     console.log(err);
                     return;
                 }
-                res.render('instituicao_atualizar', { instituicao : result[0] });
+                res.render('instituicao-atualizar', { instituicao : result[0] });
                 mongoClient.close();
             });
         });

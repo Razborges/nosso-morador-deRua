@@ -1,9 +1,166 @@
-<%- include('basic/header'); %>
-    <h1>Nosso Morador de Rua</h1>
-    <a href="/morador/cadastro">Adicionar Morador de Rua</a>
-    <a href="/morador">Ver Moradores de Rua</a>
-    <a href="/instituicao/cadastro">Adicionar Instituição</a>
-    <a href="/instituicoes">Ver Instituições</a>
-    <a href="/usuario/cadastro">Adicionar Usuário</a>
-    <a href="/usuarios">Ver Usuários</a>
-<%- include('basic/footer'); %>
+<%- include('modelos/header'); %>
+
+    <div class="o-apresentacao">
+        <div class="abertura">
+            <img class="o-apresentacao_logo" src="imagens/logo.png" alt="Logotipo Nosso Morador de Rua" width="276px" height="90px">
+            <h3>Cadastre-se e ajude pessoas que precisam de você.</h3>
+        </div>
+        <div class="o-form cadastro">
+            <h3>Preencha para se cadastrar</h3>
+            <form class="o-form">
+                <div class="form-barra">
+                    <label type="hidden" for="nome"></label>
+                    <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="" autofocus>
+                    <label type="hidden" for="email"></label>
+                    <input class="inp-gd" type="email" id="email" name="email" placeholder="E-mail" value="">
+                    <label type="hidden" for="senha"></label>
+                    <input class="inp-gd" type="password" id="senha" name="senha" placeholder="Senha" value="">
+                    <label type="hidden" for="re_senha"></label>
+                    <input class="inp-gd" type="password" id="re_senha" name="re_senha" placeholder="Digite a senha novamente" value="">
+                </div>
+                <button class="btn-destaque" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    <div>
+        <section>
+            <h1>Últimas histórias adicionadas</h1>
+            <div class="o-descricao">
+                <div class="retrato">
+                    <img src="" alt="Retrato do morador de rua NOME-AQUI">
+                </div>
+                <div class="o-descricao_detalhe">
+                    <div class="detalhe_nome">
+                        <h2>José Linhares</h2>
+                        <p class="txt-secundario">Rio de Janeiro</p>
+                    </div>
+                    <div>
+                        <p>Nascido em João Pessoa/PB</p>
+                    </div>
+                    <div class="o-descricao_necessidades">
+                        <table>
+                            <th class="titulo-destaque">Necessidades Atuais</th>
+                            <tr>
+                                <td>Documentos</td>
+                            </tr>
+                            <tr>
+                                <td>Ajuda de Custo</td>
+                            </tr>
+                            <tr>
+                                <td>Alimentação</td>
+                            </tr>
+                            <tr>
+                                <td>Água potável</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="o-descricao_historico">
+                    <h4 class="titulo-secundario">Minha história:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore maiores fugit illo ipsam incidunt a illum dolor veniam nesciunt esse sit iusto et, voluptatem, reprehenderit? A quod atque laudantium.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste.</p>
+                    <div class="historico_link">
+                        <a class="btn-destaque_link" href="">Veja mais...</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--RETIRAR DEPOIS TODO ESSE TRECHO DE REPETICAO-->
+            <div class="o-descricao">
+                <div class="retrato">
+                    <img src="" alt="Retrato do morador de rua NOME-AQUI">
+                </div>
+                <div class="o-descricao_detalhe">
+                    <div class="detalhe_nome">
+                        <h2>José Linhares</h2>
+                        <p class="txt-secundario">Rio de Janeiro</p>
+                    </div>
+                    <div>
+                        <p>Nascido em João Pessoa/PB</p>
+                    </div>
+                    <div class="o-descricao_necessidades">
+                        <table>
+                            <th class="titulo-destaque">Necessidades Atuais</th>
+                            <tr>
+                                <td>Documentos</td>
+                            </tr>
+                            <tr>
+                                <td>Ajuda de Custo</td>
+                            </tr>
+                            <tr>
+                                <td>Alimentação</td>
+                            </tr>
+                            <tr>
+                                <td>Água potável</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="o-descricao_historico">
+                    <h4 class="titulo-secundario">Minha história:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore maiores fugit illo ipsam incidunt a illum dolor veniam nesciunt esse sit iusto et, voluptatem, reprehenderit? A quod atque laudantium.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste.</p>
+                    <div class="historico_link">
+                        <a class="btn-destaque_link" href="">Veja mais...</a>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+            <div class="o-descricao">
+                <div class="retrato">
+                    <img src="" alt="Retrato do morador de rua NOME-AQUI">
+                </div>
+                <div class="o-descricao_detalhe">
+                    <div class="detalhe_nome">
+                        <h2>José Linhares</h2>
+                        <p class="txt-secundario">Rio de Janeiro</p>
+                    </div>
+                    <div>
+                        <p>Nascido em João Pessoa/PB</p>
+                    </div>
+                    <div class="o-descricao_necessidades">
+                        <table>
+                            <th class="titulo-destaque">Necessidades Atuais</th>
+                            <tr>
+                                <td>Documentos</td>
+                            </tr>
+                            <tr>
+                                <td>Ajuda de Custo</td>
+                            </tr>
+                            <tr>
+                                <td>Alimentação</td>
+                            </tr>
+                            <tr>
+                                <td>Água potável</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="o-descricao_historico">
+                    <h4 class="titulo-secundario">Minha história:</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore maiores fugit illo ipsam incidunt a illum dolor veniam nesciunt esse sit iusto et, voluptatem, reprehenderit? A quod atque laudantium.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste. Ipsum nemo reiciendis dolore corrupti aspernatur deserunt magnam! Eaque deserunt quia, voluptatem libero! Aperiam deserunt minus animi? Atque excepturi dicta quasi iste.</p>
+                    <div class="historico_link">
+                        <a class="btn-destaque_link" href="">Veja mais...</a>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+
+        </section>
+        <div class="o-section_fechamento">
+            <a class="btn-destaque_link btn-xgd" href="">Conheça outras histórias</a>
+        </div>
+    </div>
+    <div class="o-quemsomos">
+        <section class="section-quemsomos">
+            <h1>O que é o Nosso Morador de Rua</h1>
+            <p class="p-quemsomos"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur totam quasi iusto nobis dicta est quo at corporis doloremque tempore eum doloribus, optio, aspernatur. Provident nulla et nisi, eum cumque!</span>
+            <span>Odio vel blanditiis nisi consectetur assumenda sapiente repellendus ullam eum praesentium reiciendis dolores ut voluptatibus maxime sequi illo voluptas, iusto non eligendi sit autem vero neque doloribus! Temporibus, a dolores!</span>
+            <span>Sed id dolorum repudiandae iste ipsa repellat. Ipsam accusamus et cum accusantium laborum veniam. Quidem necessitatibus, consequuntur amet, atque quis velit molestias accusamus tempora deserunt modi saepe reiciendis. Dignissimos, consequatur!</span></p>
+            <p class="p-quemsomos"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur accusantium odit cum nostrum, eum nihil laboriosam quia odio eos qui, maxime illum optio, architecto illo aut officiis. Itaque, eveniet mollitia?</p>
+            <p class="p-quemsomos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis dolor, aliquid rerum laudantium autem, est magni, quod officiis quas optio odio, sit vitae! Consequuntur architecto optio repudiandae debitis ipsam, sequi.</p>
+        </section>
+    </div>
+
+<%- include('modelos/footer'); %>

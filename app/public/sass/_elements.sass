@@ -1,0 +1,154 @@
+//estilização de elementos html diretamente
+header
+    width: 100%
+    margin: 0
+
+input
+    background-color: $cloud
+    border: none
+    height: 31px
+    font-family: $cabin
+    color: $cinza
+    padding-left: 5px
+    font-size: $_13
+    font-weight: 400
+    width: 194px
+    &:focus
+        box-shadow: 0 0 5px $rosa inset
+        outline: none
+    +placeholder($cinza)
+
+button
+    width: 55px
+    height: 31px
+    background-color: $cinza
+    font-family: $cabin
+    color: $cloud
+    font-size: $_13
+    border: 0
+    font-weight: bold
+    letter-spacing: 1px
+    cursor: pointer
+    &:hover
+        background-color: $roxo
+    &:focus
+        outline: none
+
+nav
+    width: 100%
+    margin: 0
+    height: 31px
+
+ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+li
+    display: inline-block
+
+a
+    text-decoration: none
+
+h3
+    font-family: $cabin
+    font-size: $_16
+    color: $marinho
+    font-weight: 400
+    width: 276px
+
+section
+    padding: 0 5% 0 5%
+    margin-top: 50px
+
+h1,
+h2,
+h4
+    font-family: $lato
+    color: $marinho
+    font-weight: 700
+    text-align: center
+
+h1
+    font-size: $_36
+    margin-bottom: 50px
+    &:before
+        content: '| '
+
+h2
+    font-size: $_24
+    margin: 0
+    padding: 0
+
+h4
+    font-size: $_20
+    margin-top: 0
+    margin-bottom: 10px
+
+p
+    font-family: $ralew
+    font-size: $_15
+    margin: 10px 0
+
+table
+    border-collapse: collapse
+
+td
+    font-family: $ralew
+    font-size: $_14
+    color: $roxo
+    text-align: center
+    border: 1px solid $cinza
+    padding: 3px
+
+footer
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    padding: 2% 5%
+
+textarea
+    width: 330px
+    height: 108px
+    border: none
+    margin: 8px
+    background-color: $cloud
+    resize: none
+    font-family: $cabin
+    color: $cinza
+    padding: 5px
+    font-size: $_13
+    font-weight: 400
+    &:focus
+        box-shadow: 0 0 5px $rosa inset
+        outline: none
+    +placeholder($cinza)
+
+select
+    width: 49px
+    height: 49px
+    text-align: center
+    background-color: $cloud
+    font-family: $cabin
+    color: $cinza
+    padding: 15px
+    font-size: $_13
+    font-weight: 400
+    border: none
+    border-radius: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    border-radius: 0
+    &:focus
+        box-shadow: 0 0 5px $rosa inset
+        outline: none
+
+input[type='file']
+    display: none
+
+label
+    padding: 0
+    margin: 0
+    cursor: pointer

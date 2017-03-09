@@ -5,7 +5,7 @@ module.exports.listar = function(application, req, res){
 }
 
 module.exports.cadastro = function(application, req, res){
-    res.render('cadastro_morador', { validacao: {}, morador: {} });
+    res.render('morador-cadastro', { validacao: {}, morador: {} });
 }
 
 module.exports.cadastrar = function(application, req, res){
@@ -16,7 +16,7 @@ module.exports.cadastrar = function(application, req, res){
     var erros = req.validationErrors();
 
     if(erros){
-        res.render('cadastro_morador', { validacao: erros, morador: dadosForm });
+        res.render('morador-cadastro', { validacao: erros, morador: dadosForm });
         return;
     }
 
@@ -47,7 +47,7 @@ module.exports.atualizar = function(application, req, res){
     var erros = req.validationErrors();
 
     if(erros){
-        res.render('morador_atualizar', { validacao: erros, morador: dadosForm });
+        res.render('morador-atualizar', { validacao: erros, morador: dadosForm });
         return;
     }
 

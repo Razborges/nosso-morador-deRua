@@ -1,0 +1,68 @@
+<%- include('modelos/header'); %>
+
+    <div class="o-apresentacao">
+        <div class="abertura_cadastros">
+            <h1 class="abertura_titulo">Cadastro de um morador de rua</h1>
+            <ul class="abertura_lista">
+                <li class="lista-abertura">Dicas:</li>
+                <li class="lista-abertura">- Preencha o formulário com as informações que tenha certeza;</li>
+                <li class="lista-abertura">- Tente ser o mais completo e verdadeiro possível em suas informações;</li>
+                <li class="lista-abertura">- Na dúvida, converse com o morador de rua. Não tenha receio, ele precisa de sua ajuda;</li>
+                <li class="lista-abertura">- Após o cadastro básico você poderá adicionar outras fotos e necessidades que ele possui.</li>
+            </ul>
+        </div>
+        <div class="o-form cadastro">
+            <h3>Preencha para cadastrar</h3>
+            <form class="o-form">
+                <div class="form-barra">
+                    <label type="hidden" for="nome"></label>
+                    <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="" autofocus>
+                    <label type="hidden" for="cidade"></label>
+                    <div class="o-form_cidade-uf">
+                        <input class="inp-mgd" type="text" id="cidade" name="cidade" placeholder="Cidade onde reside" value="">
+                        <label type="hidden" for="uf"></label>
+                        <select id="uf" name="uf">
+                            <option disabled selected value="">UF</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                    <label type="hidden" for="origem"></label>
+                    <input class="inp-gd" type="text" id="origem" name="origem" placeholder="Cidade de origem" value="">
+                    <textarea rows="4" cols="39" placeholder="Conte a história dele..."></textarea>
+                    <div class="inputfile">
+                        <label for="foto">Clique para adicionar fotos</label>
+                        <input type="file" id="foto" name="foto">
+                    </div>
+                </div>
+                <button class="btn-destaque" type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+<%- include('modelos/footer'); %>
