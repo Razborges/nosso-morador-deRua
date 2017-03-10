@@ -179,7 +179,7 @@ MoradorDAO.prototype.home = function(res){
                     console.log(err);
                     return;
                 }
-                res.render('index', { moradores : result });
+                res.render('index', { validacao : {}, usuario : {}, moradores : result });
                 mongoClient.close();
             });
         });

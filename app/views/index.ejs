@@ -2,8 +2,19 @@
 
     <div class="o-apresentacao">
         <div class="abertura">
-            <img class="o-apresentacao_logo" src="imagens/logo.png" alt="Logotipo Nosso Morador de Rua" width="276px" height="90px">
-            <h3>Cadastre-se e ajude pessoas que precisam de você.</h3>
+            <% if(validacao.length > 0) { %>
+                <div>
+                    <ul class="abertura_lista">
+                        <li class="lista-abertura alerta"><strong>Atenção:</strong></li>
+                        <% for(var i = 0; i < validacao.length; i++) { %>
+                            <li class="lista-abertura alerta"><%= validacao[i].msg %></li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } else { %>
+                <img class="o-apresentacao_logo" src="imagens/logo.png" alt="Logotipo Nosso Morador de Rua" width="276px" height="90px">
+                <h3>Cadastre-se e ajude pessoas que precisam de você.</h3>
+            <% } %>
         </div>
         <div class="o-form cadastro">
             <h3>Preencha para se cadastrar</h3>
@@ -40,7 +51,7 @@
                         </div>
                         <div class="o-descricao_necessidades">
 
-                            <% if(moradores[i].necessidades) { %>
+                            <% if(moradores[i].necessidades.length > 0) { %>
                                 <table>
                                     <th class="titulo-destaque">Necessidades Atuais</th>
                                     <% for(var j = 0; j < moradores[i].necessidades.length; j++) { %>

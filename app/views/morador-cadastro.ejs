@@ -1,25 +1,36 @@
 <%- include('modelos/header'); %>
 
     <div class="o-apresentacao">
-        <div class="abertura_cadastros">
-            <h1 class="abertura_titulo">Cadastro de um morador de rua</h1>
-            <ul class="abertura_lista">
-                <li class="lista-abertura">Dicas:</li>
-                <li class="lista-abertura">- Preencha o formulário com as informações que tenha certeza;</li>
-                <li class="lista-abertura">- Tente ser o mais completo e verdadeiro possível em suas informações;</li>
-                <li class="lista-abertura">- Na dúvida, converse com o morador de rua. Não tenha receio, ele precisa de sua ajuda;</li>
-                <li class="lista-abertura">- Após o cadastro básico você poderá adicionar outras fotos e necessidades que ele possui.</li>
-            </ul>
+        <div class="abertura">
+            <% if(validacao.length > 0) { %>
+                <div>
+                    <ul class="abertura_lista">
+                        <li class="lista-abertura alerta"><strong>Atenção:</strong></li>
+                        <% for(var i = 0; i < validacao.length; i++) { %>
+                            <li class="lista-abertura alerta"><%= validacao[i].msg %></li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } else { %>
+                <h1 class="abertura_titulo">Cadastro de um morador de rua</h1>
+                <ul class="abertura_lista">
+                    <li class="lista-abertura">Dicas:</li>
+                    <li class="lista-abertura">- Preencha o formulário com as informações que tenha certeza;</li>
+                    <li class="lista-abertura">- Tente ser o mais completo e verdadeiro possível em suas informações;</li>
+                    <li class="lista-abertura">- Na dúvida, converse com o morador de rua. Não tenha receio, ele precisa de sua ajuda;</li>
+                    <li class="lista-abertura">- Após o cadastro básico você poderá adicionar outras fotos e necessidades que ele possui.</li>
+                </ul>
+            <% } %>
         </div>
         <div class="o-form cadastro">
             <h3>Preencha para cadastrar</h3>
-            <form class="o-form" method="post" action="/morador">
+            <form class="o-form" method="post" action="/morador" enctype="multipart/form-data">
                 <div class="form-barra">
                     <label type="hidden" for="nome"></label>
-                    <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="" autofocus>
+                    <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="<%= morador.nome %>" autofocus>
                     <label type="hidden" for="cidade"></label>
                     <div class="o-form_cidade-uf">
-                        <input class="inp-mgd" type="text" id="cidade" name="cidade" placeholder="Cidade onde reside" value="">
+                        <input class="inp-mgd" type="text" id="cidade" name="cidade" placeholder="Cidade onde reside" value="<%= morador.cidade %>">
                         <label type="hidden" for="uf"></label>
                         <select id="uf" name="uf">
                             <option disabled selected value="">UF</option>
@@ -53,8 +64,8 @@
                         </select>
                     </div>
                     <label type="hidden" for="origem"></label>
-                    <input class="inp-gd" type="text" id="origem" name="origem" placeholder="Cidade de origem" value="">
-                    <textarea id="historico" name="historico" rows="4" cols="39" placeholder="Conte a história dele..."></textarea>
+                    <input class="inp-gd" type="text" id="origem" name="origem" placeholder="Cidade de origem" value="<%= morador.origem %>">
+                    <textarea id="historico" name="historico" rows="4" cols="39" placeholder="Conte a história dele..."><%= morador.historico %></textarea>
                     <div class="inputfile">
                         <label for="foto">Clique para adicionar fotos</label>
                         <input type="file" id="foto" name="foto">
