@@ -17,6 +17,8 @@ Após o cadastro realizado o usuário poderá editar para cada morador de rua:
 
 O Sistema permite o cadastro de usuários e de Instituições vinculadas que irão acompanhar o mesmo morador de rua.
 
+Todo o layout e o respectivo CSS foi criado por mim do zero utilizando a técnica ITCSS para auxiliar na organização do código. Estou utilizando como auxilio o Normalize.
+
 ## Tecnologias Utilizadas
 
 Neste projeto estão sendo utilizadas as seguintes tecnologias:
@@ -40,6 +42,7 @@ Algumas pendências principais:
 1. Autorização de Sessão não implementado
 1. Tela de Administração não implementado
 1. Tela detalhada de Morador de Rua ainda não sincronizada com o Back-end
+1. Layout mobile
 
 
 Processos que estão funcionais:
