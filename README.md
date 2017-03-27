@@ -39,8 +39,9 @@ Este projeto ainda não está finalizado e também não possui o seu escopo comp
 Algumas pendências principais:
 
 1. Upload de Fotos não implementado
-1. Autorização de Sessão não implementado
-1. Tela de Administração não implementado
+1. Autorização de Sessão não implementada
+1. Tela de Administração não implementada
+1. Tela edição de Instituição não implementada
 1. Tela detalhada de Morador de Rua ainda não sincronizada com o Back-end
 1. Layout mobile
 
@@ -55,3 +56,4 @@ Processos que estão funcionais:
 1. Integração tela principal com o bD
 1. Integração formulário de cadastro com o bD
 1. Integração formulário de cadastro de Instituição com o bD
+1. Tela de Listagem de moradores de rua sincronizada com o Back-end
