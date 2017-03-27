@@ -41,16 +41,17 @@ Algumas pendências principais:
 1. Upload de Fotos não implementado
 1. Autorização de Sessão não implementada
 1. Tela de Administração não implementada
-1. Tela edição de Instituição não implementada
+1. Atualizaçao de Usuario Tela pessoal
+1. Verificar Atualizaçao de Morador
 1. Tela detalhada de Morador de Rua ainda não sincronizada com o Back-end
 1. Layout mobile
 
 
 Processos que estão funcionais:
 
-1. CRUD Morador de Rua
-1. CRUD Usuário
-1. CRUD Instituição
+1. CRUD Morador de Rua back-end
+1. CRUD Usuário back-end
+1. CRUD Instituição back-end
 1. Design
 1. HTML e SASS
 1. Integração tela principal com o bD

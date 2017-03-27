@@ -20,6 +20,7 @@
             <h3>Preencha para se cadastrar</h3>
             <form class="o-form" action="/usuario/<%= usuario._id %>" method="post">
                 <div class="form-barra">
+                    <input type="hidden" id="id" name="id" value="<%= usuario._id %>">
                     <label type="hidden" for="nome"></label>
                     <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="<%= usuario.nome %>" autofocus>
                     <label type="hidden" for="email"></label>

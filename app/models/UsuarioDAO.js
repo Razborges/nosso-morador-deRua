@@ -81,7 +81,7 @@ UsuarioDAO.prototype.editar = function(id, res){
 }
 
 UsuarioDAO.prototype.atualizar = function(usuario, res){
-    var id = usuario._id;
+    var id = usuario.id;
     delete usuario._id;
     this._connection.open(function(err, mongoClient){
         if(err){

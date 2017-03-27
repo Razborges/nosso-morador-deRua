@@ -80,7 +80,7 @@ InstituicaoDAO.prototype.editar = function(id, res){
 }
 
 InstituicaoDAO.prototype.atualizar = function(instituicao, res){
-    var id = instituicao._id;
+    var id = instituicao.id;
     delete instituicao._id;
     this._connection.open(function(err, mongoClient){
         if(err){

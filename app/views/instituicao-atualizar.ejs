@@ -25,6 +25,7 @@
             <h3>Preencha para cadastrar</h3>
             <form class="o-form" action="/instituicao/<%= instituicao._id %>" method="post">
                 <div class="form-barra">
+                    <input type="hidden" id="id" name="id" value="<%= instituicao._id %>">
                     <label type="hidden" for="instituicao"></label>
                     <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Instituição" value="<%= instituicao.nome %>" autofocus>
                     <label type="hidden" for="responsavel"></label>
