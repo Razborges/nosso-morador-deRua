@@ -48,7 +48,7 @@ MoradorDAO.prototype.listar = function(res){
                     console.log(err);
                     return;
                 }
-                res.render('moradores', { moradores : result });
+                res.render('moradores', { usuario : {}, moradores : result });
                 mongoClient.close();
             });
         });
