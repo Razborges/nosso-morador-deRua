@@ -43,7 +43,7 @@ Algumas pendências principais:
 1. Tela de Administração não implementada
 1. Atualizaçao de Usuario Tela pessoal
 1. Verificar Atualizaçao de Morador
-1. Tela detalhada de Morador de Rua ainda não sincronizada com o Back-end
+1. Tela detalhada de Morador de Rua faltando ajax nos formulários
 1. Layout mobile
 
 
@@ -58,3 +58,4 @@ Processos que estão funcionais:
 1. Integração formulário de cadastro com o bD
 1. Integração formulário de cadastro de Instituição com o bD
 1. Tela de Listagem de moradores de rua sincronizada com o Back-end
+1. Tela detalhada de Morador de Rua ainda sincronizada com o Back-end
