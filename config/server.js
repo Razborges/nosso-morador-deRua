@@ -22,13 +22,14 @@ consign()
     .then('app/controllers')
     .into(app);
 
-app.use(function(err, req, res, next){
-    res.status(404).render('errors/404');
+app.use(function(req, res, next){
+    res.status(404).render('./errors/404');
     next;
 });
 
 app.use(function(err, req, res, next){
-    res.status(500).render('errors/500');
+    res.status(500).render('./errors/500');
+    next;
 });
 
 module.exports = app;

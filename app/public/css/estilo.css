@@ -576,7 +576,7 @@ label {
   margin: 8px; }
 
 .inp-xgd {
-  width: 80%;
+  width: 50%;
   height: 49px;
   margin: 8px; }
 
@@ -809,3 +809,6 @@ label {
 
 .alerta {
   color: #D0011B; }
+
+.erro {
+  font-size: 4rem; }
