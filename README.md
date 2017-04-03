@@ -15,9 +15,7 @@ Após o cadastro realizado o usuário poderá editar para cada morador de rua:
 - Suas Necessidades atuais;
 - Informações Sociais de emergência, policial ou de serviços sociais.
 
-O Sistema permite o cadastro de usuários e de Instituições vinculadas que irão acompanhar o mesmo morador de rua.
-
-Todo o layout e o respectivo CSS foi criado por mim do zero utilizando a técnica ITCSS para auxiliar na organização do código. Estou utilizando como auxilio o Normalize.
+Todo o layout e o respectivo CSS foi criado por mim do zero utilizando a técnica ITCSS para auxiliar na organização do códigocom excessão do Normalize.
 
 ## Tecnologias Utilizadas
 
@@ -40,7 +38,6 @@ Algumas pendências principais:
 
 1. Upload de Fotos não implementado
 1. Autorização de Sessão não implementada
-1. Tela de Administração não implementada
 1. Atualizaçao de Usuario Tela pessoal
 1. Verificar Atualizaçao de Morador
 1. Tela detalhada de Morador de Rua faltando ajax nos formulários
@@ -51,11 +48,9 @@ Processos que estão funcionais:
 
 1. CRUD Morador de Rua back-end
 1. CRUD Usuário back-end
-1. CRUD Instituição back-end
 1. Design
 1. HTML e SASS
 1. Integração tela principal com o bD
 1. Integração formulário de cadastro com o bD
-1. Integração formulário de cadastro de Instituição com o bD
 1. Tela de Listagem de moradores de rua sincronizada com o Back-end
 1. Tela detalhada de Morador de Rua ainda sincronizada com o Back-end
