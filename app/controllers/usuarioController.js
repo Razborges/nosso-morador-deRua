@@ -5,7 +5,7 @@ module.exports.buscar = function(application, req, res){
 }
 
 module.exports.cadastro = function(application, req, res){
-    res.render('usuario-cadastro', { validacao : {}, instituicao : {} });
+    res.render('usuario-cadastro', { validacao : {}, usuario : {} });
 }
 
 module.exports.cadastrar = function(application, req, res){

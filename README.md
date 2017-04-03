@@ -51,6 +51,6 @@ Processos que estão funcionais:
 1. Design
 1. HTML e SASS
 1. Integração tela principal com o bD
-1. Integração formulário de cadastro com o bD
+1. Integração formulários de cadastro com o bD
 1. Tela de Listagem de moradores de rua sincronizada com o Back-end
 1. Tela detalhada de Morador de Rua ainda sincronizada com o Back-end
