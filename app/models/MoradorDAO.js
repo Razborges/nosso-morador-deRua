@@ -87,7 +87,7 @@ MoradorDAO.prototype.editar = function(id, res){
             return;
         }
         mongoClient.collection('morador_rua', function(err, collection){
-            if(err) {
+            if(err){
                 mongoClient.close();
                 console.log(err);
                 return;
@@ -98,11 +98,11 @@ MoradorDAO.prototype.editar = function(id, res){
                     console.log(err);
                     return;
                 }
-                res.render('morador-atualizar', { morador : result[0] });
+                res.render('morador-atualizar', { validacao: {}, morador : result[0] });
                 mongoClient.close();
             });
         });
-    }); 
+    });
 }
 
 MoradorDAO.prototype.atualizar = function(morador, res){

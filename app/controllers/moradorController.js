@@ -47,8 +47,8 @@ module.exports.buscar = function(application, req, res){
 module.exports.editar = function(application, req, res){
     var id = req.params.id;
     var conn = application.config.dbMongo;
-    var moradorDao = new application.app.models.MoradorDAO(conn);
-    moradorDao.editar(id, res);
+    var moradorDAO = new application.app.models.MoradorDAO(conn);
+    moradorDAO.editar(id, res);
 }
 
 module.exports.atualizar = function(application, req, res){

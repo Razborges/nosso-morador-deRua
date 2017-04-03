@@ -747,6 +747,21 @@ label {
   margin: 15px;
   border: 3px solid #95A5A6; }
 
+.editar_link {
+  width: 100%;
+  height: 31px;
+  margin: 0px;
+  padding: 8px 0;
+  background-color: #95A5A6;
+  color: #ECF0F1;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center; }
+  .editar_link:hover {
+    background-color: #2C3E50; }
+  .editar_link:active {
+    outline: none; }
+
 .detalhe_tabela-necessidades {
   width: 383px;
   height: 49px;

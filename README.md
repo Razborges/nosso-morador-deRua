@@ -38,8 +38,8 @@ Algumas pendências principais:
 
 1. Upload de Fotos não implementado
 1. Autorização de Sessão não implementada
-1. Atualizaçao de Usuario Tela pessoal
-1. Verificar Atualizaçao de Morador
+1. Atualizaçao de Usuario - editar perfil
+1. Atualizaçao de tela do Morador de Rua
 1. Tela detalhada de Morador de Rua faltando ajax nos formulários
 1. Layout mobile
 
@@ -54,3 +54,4 @@ Processos que estão funcionais:
 1. Integração formulários de cadastro com o bD
 1. Tela de Listagem de moradores de rua sincronizada com o Back-end
 1. Tela detalhada de Morador de Rua ainda sincronizada com o Back-end
+1. Páginas de erro 404 e 500
