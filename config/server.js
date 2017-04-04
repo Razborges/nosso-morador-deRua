@@ -3,6 +3,7 @@ var consign = require('consign');
 var bodyParser = require('body-parser');
 var validator = require('express-validator');
 var multipart = require('connect-multiparty');
+var expressSession = require('express-session');
 
 var app = express();
 
@@ -11,9 +12,13 @@ app.set('views', './app/views');
 
 app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
 app.use(validator());
 app.use(multipart());
+app.use(expressSession({
+    secret: 's3gr3d0D@S3ss10n',
+    resave: false,
+    saveUninitialized: false
+}));
 
 consign()
     .include('app/routes')

@@ -31,26 +31,44 @@ module.exports.cadastrar = function(application, req, res){
 }
 
 module.exports.editar = function(application, req, res){
-    var id = req.params.id;
-    var conn = application.config.dbMongo;
-    var usuarioDAO = new application.app.models.UsuarioDAO(conn);
-    usuarioDAO.editar(id, res); 
+    if(req.session.autorizado) {
+        var id = req.params.id;
+        var conn = application.config.dbMongo;
+        var usuarioDAO = new application.app.models.UsuarioDAO(conn);
+        usuarioDAO.editar(id, res); 
+    } else {
+        var erros = [ {
+            param: '',
+            msg: '- É necessário efetuar o login/cadastro para acessar esse link.',
+            value: ''
+        }];
+        res.render('usuario-cadastro', { validacao : erros, usuario: {} });
+    }
 }
 
 module.exports.atualizar = function(application, req, res){
-    var dadosForm = req.body;
+    if(req.session.autorizado) {
+        var dadosForm = req.body;
 
-    req.assert('nome', 'Preenchimento obrigatório do nome').notEmpty();
-    
-    var erros = req.validationErrors();
-    if(erros){
-        res.render('usuario-atualizar', { validacao : erros, instituicao : dadosForm});
-        return;
+        req.assert('nome', 'Preenchimento obrigatório do nome').notEmpty();
+        
+        var erros = req.validationErrors();
+        if(erros){
+            res.render('usuario-atualizar', { validacao : erros, usuario : dadosForm});
+            return;
+        }
+
+        var conn = application.config.dbMongo;
+        var usuarioDAO = new application.app.models.UsuarioDAO(conn);
+        usuarioDAO.atualizar(dadosForm, res);
+    } else {
+        var erros = [ {
+            param: '',
+            msg: '- É necessário efetuar o login/cadastro para acessar esse link.',
+            value: ''
+        }];
+        res.render('usuario-cadastro', { validacao : erros, usuario: {} });
     }
-
-    var conn = application.config.dbMongo;
-    var usuarioDAO = new application.app.models.UsuarioDAO(conn);
-    usuarioDAO.atualizar(dadosForm, res);
 }
 
 module.exports.remover = function(application, req, res){

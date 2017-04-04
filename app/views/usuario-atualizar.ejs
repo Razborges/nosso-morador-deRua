@@ -12,12 +12,12 @@
                     </ul>
                 </div>
             <% } else { %>
-                <img class="o-apresentacao_logo" src="imagens/logo.png" alt="Logotipo Nosso Morador de Rua" width="276px" height="90px">
-                <h3>Cadastre-se e ajude pessoas que precisam de você.</h3>
+                <h1 class="abertura_titulo">Atualização de usuário</h1>
+                <h3>Você pode trocar seu e-mail, nome ou senha.</h3>
             <% } %>
         </div>
         <div class="o-form cadastro">
-            <h3>Preencha para se cadastrar</h3>
+            <h3>Atualize seus dados</h3>
             <form class="o-form" action="/usuario/<%= usuario._id %>" method="post">
                 <div class="form-barra">
                     <input type="hidden" id="id" name="id" value="<%= usuario._id %>">
