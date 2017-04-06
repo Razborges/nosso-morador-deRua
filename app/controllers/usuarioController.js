@@ -84,3 +84,13 @@ module.exports.detalhe = function(application, req, res){
     var usuarioDAO = new application.app.models.UsuarioDAO(conn);
     usuarioDAO.detalhe(id, res);
 }
+
+module.exports.sair = function(application, req, res){
+    req.session.destroy(function(err){
+        if(err) {
+            console.log(err);
+            return;
+        }
+        res.redirect('/');
+    });
+}

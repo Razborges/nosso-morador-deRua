@@ -1,4 +1,5 @@
 var objectId = require('mongodb').ObjectID;
+var crypto = require('crypto');
 
 var UsuarioDAO = function(connection) {
     this._connection = connection();
@@ -30,6 +31,8 @@ UsuarioDAO.prototype.buscar = function(res){
 }
 
 UsuarioDAO.prototype.cadastrar = function(usuario, res){
+    var senha_criptografada = crypto.createHash('md5').update(usuario.senha).digest('hex');
+    usuario.senha = senha_criptografada;
     this._connection.open(function(err, mongoClient){
         if(err){
             console.log(err);
@@ -163,6 +166,8 @@ UsuarioDAO.prototype.detalhe = function(id, res){
 }
 
 UsuarioDAO.prototype.autenticar = function(usuario, req, res){
+    var senha_criptografada = crypto.createHash('md5').update(usuario.senha).digest('hex');
+    usuario.senha = senha_criptografada;
     this._connection.open(function(err, mongoClient){
         if(err){
             console.log(err);
@@ -183,7 +188,7 @@ UsuarioDAO.prototype.autenticar = function(usuario, req, res){
                 mongoClient.close();
                 if(result[0] != undefined){
                     req.session.autorizado = true;
-                    req.session.email = result[0].email;
+                    req.session.ident = result[0]._id;
                     req.session.nome = result[0].nome;
                 }
 

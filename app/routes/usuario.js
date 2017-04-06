@@ -26,4 +26,8 @@ module.exports = function(application){
     application.get('/usuario/:id', function(req, res){
         application.app.controllers.usuarioController.detalhe(application, req, res);
     });
+
+    application.get('/usuario/sair', function(req, res){
+        application.app.controllers.usuarioController.sair(application, req, res);
+    });
 }

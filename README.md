@@ -37,7 +37,7 @@ Este projeto ainda não está finalizado e também não possui o seu escopo comp
 Algumas pendências principais:
 
 1. Upload de Fotos não implementado
-1. Autorização de Sessão não implementada
+1. Autorização de Sessão na view não implementada
 1. Atualizaçao de Usuario - editar perfil
 1. Atualizaçao de tela do Morador de Rua
 1. Tela detalhada de Morador de Rua faltando ajax nos formulários
@@ -55,3 +55,5 @@ Processos que estão funcionais:
 1. Tela de Listagem de moradores de rua sincronizada com o Back-end
 1. Tela detalhada de Morador de Rua ainda sincronizada com o Back-end
 1. Páginas de erro 404 e 500
+1. Sessão parcialmente aplicada
+1. Criptografia de senha implementada
