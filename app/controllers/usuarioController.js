@@ -50,7 +50,13 @@ module.exports.atualizar = function(application, req, res){
     if(req.session.autorizado) {
         var dadosForm = req.body;
 
-        req.assert('nome', 'Preenchimento obrigatório do nome').notEmpty();
+        req.assert('nome', '- Preenchimento obrigatório do nome').notEmpty();
+        req.assert('email', '- Necessário utilizar um e-mail válido').notEmpty().isEmail();
+        req.assert('senha', '- Preenchimento obrigatório').notEmpty();
+        req.assert('senha', '- A senha deve ter entre 6 e 20 caracteres').len(6, 20);
+        req.assert('re_senha', '- Preenchimento obrigatório').notEmpty();
+        req.assert('re_senha', '- Deve ser igual a senha e ter de 6 a 20 caracteres').len(6, 20);
+        req.assert('re_senha', '- Deve ser igual a senha').equals(dadosForm.senha);
         
         var erros = req.validationErrors();
         if(erros){

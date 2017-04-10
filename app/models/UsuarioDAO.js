@@ -86,6 +86,8 @@ UsuarioDAO.prototype.editar = function(id, res){
 UsuarioDAO.prototype.atualizar = function(usuario, res){
     var id = usuario.id;
     delete usuario._id;
+    var senha_criptografada = crypto.createHash('md5').update(usuario.senha).digest('hex');
+    usuario.senha = senha_criptografada;
     this._connection.open(function(err, mongoClient){
         if(err){
             console.log(err);
@@ -107,7 +109,7 @@ UsuarioDAO.prototype.atualizar = function(usuario, res){
                         console.log(err);
                         return;
                     }
-                    res.redirect('/usuarios');
+                    res.redirect('/');
                     mongoClient.close();
                 }
             );
