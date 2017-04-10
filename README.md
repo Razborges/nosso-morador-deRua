@@ -37,6 +37,8 @@ Este projeto ainda não está finalizado e também não possui o seu escopo comp
 Algumas pendências principais:
 
 1. Upload de Fotos não implementado
+1. Verificar formatação de data tela morador
+1. Adição de classes conforme o tipo de informação
 1. Tela detalhada de Morador de Rua faltando ajax nos formulários
 1. Layout mobile
 

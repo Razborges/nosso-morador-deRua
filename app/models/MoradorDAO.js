@@ -186,6 +186,72 @@ MoradorDAO.prototype.home = function(res){
     });
 }
 
+MoradorDAO.prototype.necessidades = function(id, necessidade, req, res){
+    this._connection.open(function(err, mongoClient){
+        if(err){
+            console.log(err);
+            return;
+        }
+        mongoClient.collection('morador_rua', function(err, collection){
+            if(err) {
+                mongoClient.close();
+                console.log(err);
+                return;
+            }
+            collection.update(
+                { _id: objectId(id) },
+                { $push : { necessidades: necessidade }},
+                {},
+                function(err, result){
+                    if(err) {
+                        mongoClient.close();
+                        console.log(err);
+                        return;
+                    }
+                    mongoClient.close();
+                    res.redirect('/morador/' + id);
+            });
+        });
+    });
+}
+
+MoradorDAO.prototype.info = function(id, info, req, res){
+    this._connection.open(function(err, mongoClient){
+        if(err){
+            console.log(err);
+            return;
+        }
+        mongoClient.collection('morador_rua', function(err, collection){
+            if(err) {
+                mongoClient.close();
+                console.log(err);
+                return;
+            }
+            collection.update(
+                { _id: objectId(id) },
+                { $push : { 
+                    info: {
+                        id_info: new objectId(),
+                        tipo: info.tipo,
+                        info: info.info,
+                        instituicao: info.instituicao,
+                        data: info.data
+                    }
+                }},
+                {},
+                function(err, result){
+                    if(err) {
+                        mongoClient.close();
+                        console.log(err);
+                        return;
+                    }
+                    mongoClient.close();
+                    res.redirect('/morador/' + id);
+            });
+        });
+    });
+}
+
 module.exports = function(){
     return MoradorDAO;
 }

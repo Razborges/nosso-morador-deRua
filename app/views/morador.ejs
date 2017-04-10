@@ -31,8 +31,7 @@
                 <table>
                     <% if(morador.necessidades.length <= 0) { %>
                         <p>Não há necessidades no momento.</p>
-                    <% } %>
-                    <% if(morador.necessidades) { %>
+                    <% } else { %>
                         <% for(var i = 0; i < morador.necessidades.length; i++) { %>
                             <tr>
                                 <td class="detalhe_tabela-necessidades"><%= morador.necessidades[i] %></td>
@@ -41,7 +40,7 @@
                     <% } %>
                 </table>
             <% if(sessao.nome) { %>
-                <form class="o-detalhe_form">
+                <form class="o-detalhe_form" action="/morador/necessidade/<%= morador._id %>" method="post">
                     <label type="hidden" for="necessidade"></label>
                     <input class="inp-gd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
                     <button class="btn-destaque btn-pq" type="submit">+</button>
@@ -53,10 +52,9 @@
     <div class="o-detalhe_info">
         <h1>Informações Sociais:</h1>
         <table class="o-tabela-info">
-            <% if(!morador.info) { %>
+            <% if(!morador.info || morador.info <= 0) { %>
                 <p>Não há informações cadastradas para este morador até o momento.</p>
-            <% } %>
-            <% if(morador.info) { %>
+            <% } else { %>
                 <thead class="tabela-info_linha">
                     <th class="tabela-info_cel tabela-info_centro tabela-info_titulo"></th>
                     <th class="tabela-info_cel tabela-info_esq tabela-info_titulo">Info</th>
@@ -66,8 +64,8 @@
                 <tbody>
                     <% for(var i = 0; i < morador.info.length; i++) { %>
                         <tr class="tabela-info_linha">
-                            <td class="tabela-info_cel tabela-info_centro tabela-info_hospital"><%= morador.info[i].tipo_necessidade %></td>
-                            <td class="tabela-info_cel tabela-info_esq"><%= morador.info[i].necessidade %></td>
+                            <td class="tabela-info_cel tabela-info_centro tabela-info_hospital"><%= morador.info[i].tipo %></td>
+                            <td class="tabela-info_cel tabela-info_esq"><%= morador.info[i].info %></td>
                             <td class="tabela-info_cel tabela-info_centro"><%= morador.info[i].instituicao %></td>
                             <td class="tabela-info_cel tabela-info_dir"><%= morador.info[i].data %></td>
                         </tr>
@@ -77,16 +75,16 @@
         </table>
         <div>
             <% if(sessao.nome) { %>
-                <form class="o-detalhe_form">
-                    <label type="hidden" for="tipo_necessidade"></label>
-                    <select class="inp-border select-info" id="tipo_necessidade" name="tipo_necessidade">
+                <form class="o-detalhe_form" action="/morador/info/<%= morador._id %>" method="post">
+                    <label type="hidden" for="tipo_info"></label>
+                    <select class="inp-border select-info" id="tipo_info" name="tipo_info">
                         <option disabled selected value="">Selecione uma opção</option>
                         <option value="H">Atendimento Hospitalar</option>
                         <option value="P">Caso Policial</option>
                         <option value="S">Atendimento Social</option>
                     </select>
-                    <label type="hidden" for="necessidade"></label>
-                    <input class="inp-xgd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
+                    <label type="hidden" for="info"></label>
+                    <input class="inp-xgd inp-border" type="text" name="info" value="" placeholder="Adicionar informação">
                     <label type="hidden" for="instituicao"></label>
                     <input class="inp-gd inp-border" type="text" name="instituicao" value="" placeholder="Nome da Instituição">
                     <button class="btn-destaque btn-pq" type="submit">+</button>

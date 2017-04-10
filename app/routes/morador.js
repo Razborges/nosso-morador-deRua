@@ -8,12 +8,12 @@ module.exports = function(application){
         application.app.controllers.moradorController.cadastro(application, req, res);
     });
 
-    application.get('/morador/editar/:id', function(req, res){
-        application.app.controllers.moradorController.editar(application, req, res);
-    });
-
     application.get('/morador/:id', function(req, res){
         application.app.controllers.moradorController.buscar(application, req, res);
+    });
+    
+    application.get('/morador/editar/:id', function(req, res){
+        application.app.controllers.moradorController.editar(application, req, res);
     });
 
     application.post('/morador', function(req, res){
@@ -26,5 +26,13 @@ module.exports = function(application){
 
     application.post('/morador/remover/:id', function(req, res){
         application.app.controllers.moradorController.remover(application, req, res);
+    });
+
+    application.post('/morador/necessidade/:id', function(req, res) {
+        application.app.controllers.moradorController.necessidades(application, req, res);
+    });
+
+    application.post('/morador/info/:id', function(req, res){
+        application.app.controllers.moradorController.info(application, req, res);
     });
 }
