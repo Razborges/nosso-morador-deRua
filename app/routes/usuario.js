@@ -11,6 +11,10 @@ module.exports = function(application){
         application.app.controllers.usuarioController.cadastrar(application, req, res);
     });
 
+    application.get('/usuario/sair', function(req, res){
+        application.app.controllers.usuarioController.sair(application, req, res);
+    });
+
     application.get('/usuario/editar/:id', function(req, res){
         application.app.controllers.usuarioController.editar(application, req, res);
     });
@@ -25,9 +29,5 @@ module.exports = function(application){
 
     application.get('/usuario/:id', function(req, res){
         application.app.controllers.usuarioController.detalhe(application, req, res);
-    });
-
-    application.get('/usuario/sair', function(req, res){
-        application.app.controllers.usuarioController.sair(application, req, res);
     });
 }

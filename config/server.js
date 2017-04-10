@@ -20,6 +20,22 @@ app.use(expressSession({
     saveUninitialized: false
 }));
 
+//midleware verificando a sessao para filtrar links e informacoes do usuario
+var verificarSessao = function (req, res, next) {
+    var sessao = {};
+    if(req.session.autorizado) {
+        sessao.nome = req.session.nome;
+        sessao.ident = req.session.ident;
+        res.locals.sessao = sessao;
+        next();
+    } else {
+        res.locals.sessao = sessao;
+        next();
+    }
+};
+
+app.use(verificarSessao);
+
 consign()
     .include('app/routes')
     .then('config/dbMongo.js')

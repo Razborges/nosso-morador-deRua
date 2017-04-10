@@ -14,7 +14,9 @@
                 <img class="miniatura" src="" alt="Mais uma imagem do morador de rua Nome Aqui" width="115" height="115">
                 <img class="miniatura" src="" alt="Uma imagem do morador de rua Nome Aqui" width="115" height="115">
             </div>
-            <a class="editar_link" href="/morador/editar/<%= morador._id %>">Editar</a>
+            <% if(sessao.nome) { %>
+                <a class="editar_link" href="/morador/editar/<%= morador._id %>">Editar</a>
+            <% } %>
         </div>
     </div>
 
@@ -38,11 +40,13 @@
                         <% } %>
                     <% } %>
                 </table>
-            <form class="o-detalhe_form">
-                <label type="hidden" for="necessidade"></label>
-                <input class="inp-gd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
-                <button class="btn-destaque btn-pq" type="submit">+</button>
-            </form>
+            <% if(sessao.nome) { %>
+                <form class="o-detalhe_form">
+                    <label type="hidden" for="necessidade"></label>
+                    <input class="inp-gd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
+                    <button class="btn-destaque btn-pq" type="submit">+</button>
+                </form>
+            <% } %>
         </aside>
 
     </div>
@@ -72,20 +76,22 @@
             <% } %>
         </table>
         <div>
-            <form class="o-detalhe_form">
-                <label type="hidden" for="tipo_necessidade"></label>
-                <select class="inp-border select-info" id="tipo_necessidade" name="tipo_necessidade">
-                    <option disabled selected value="">Selecione uma opção</option>
-                    <option value="H">Atendimento Hospitalar</option>
-                    <option value="P">Caso Policial</option>
-                    <option value="S">Atendimento Social</option>
-                </select>
-                <label type="hidden" for="necessidade"></label>
-                <input class="inp-xgd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
-                <label type="hidden" for="instituicao"></label>
-                <input class="inp-gd inp-border" type="text" name="instituicao" value="" placeholder="Nome da Instituição">
-                <button class="btn-destaque btn-pq" type="submit">+</button>
-            </form>
+            <% if(sessao.nome) { %>
+                <form class="o-detalhe_form">
+                    <label type="hidden" for="tipo_necessidade"></label>
+                    <select class="inp-border select-info" id="tipo_necessidade" name="tipo_necessidade">
+                        <option disabled selected value="">Selecione uma opção</option>
+                        <option value="H">Atendimento Hospitalar</option>
+                        <option value="P">Caso Policial</option>
+                        <option value="S">Atendimento Social</option>
+                    </select>
+                    <label type="hidden" for="necessidade"></label>
+                    <input class="inp-xgd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
+                    <label type="hidden" for="instituicao"></label>
+                    <input class="inp-gd inp-border" type="text" name="instituicao" value="" placeholder="Nome da Instituição">
+                    <button class="btn-destaque btn-pq" type="submit">+</button>
+                </form>
+            <% } %>
         </div>
     </div>
 
