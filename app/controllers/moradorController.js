@@ -109,7 +109,7 @@ module.exports.info = function(application, req, res) {
             tipo: req.body.tipo_info,
             info: req.body.info,
             instituicao: req.body.instituicao,
-            data: new Date().toLocaleDateString()
+            data: req.body.data
         }
         var conn = application.config.dbMongo;
         var moradorDao = new application.app.models.MoradorDAO(conn);

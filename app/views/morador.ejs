@@ -64,10 +64,10 @@
                 <tbody>
                     <% for(var i = 0; i < morador.info.length; i++) { %>
                         <tr class="tabela-info_linha">
-                            <td class="tabela-info_cel tabela-info_centro tabela-info_hospital"><%= morador.info[i].tipo %></td>
+                            <td class="tabela-info_cel tabela-info_centro js_info-tipo"><%= morador.info[i].tipo %></td>
                             <td class="tabela-info_cel tabela-info_esq"><%= morador.info[i].info %></td>
                             <td class="tabela-info_cel tabela-info_centro"><%= morador.info[i].instituicao %></td>
-                            <td class="tabela-info_cel tabela-info_dir"><%= morador.info[i].data %></td>
+                            <td class="tabela-info_cel tabela-info_dir js_info-data" id="info-data"><%= morador.info[i].data %></td>
                         </tr>
                     <% } %>
                 </tbody>
@@ -84,9 +84,11 @@
                         <option value="S">Atendimento Social</option>
                     </select>
                     <label type="hidden" for="info"></label>
-                    <input class="inp-xgd inp-border" type="text" name="info" value="" placeholder="Adicionar informação">
+                    <input class="inp-gd inp-border" type="text" name="info" value="" placeholder="Adicionar informação">
                     <label type="hidden" for="instituicao"></label>
                     <input class="inp-gd inp-border" type="text" name="instituicao" value="" placeholder="Nome da Instituição">
+                    <label type="hidden" for="data"></label>
+                    <input class="inp-gd inp-border" type="date" name="data" value="" >
                     <button class="btn-destaque btn-pq" type="submit">+</button>
                 </form>
             <% } %>
@@ -94,3 +96,29 @@
     </div>
 
 <%- include('modelos/footer'); %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/br.js"></script>
+<script>
+    var listaDatas = document.querySelectorAll('td.js_info-data');
+    for(var i = 0; i < listaDatas.length; i++) {
+        formataData(listaDatas[i]);
+    };
+
+    var listaTipos = document.querySelectorAll('td.js_info-tipo');
+    for(var i = 0; i < listaDatas.length; i++) {
+        escolheClasseTipoInfo(listaTipos[i]);
+    };
+
+    function formataData(elemento) {
+        data = moment(elemento.textContent, 'YYYY-MM-DD').format('L');
+        elemento.textContent = data;
+    };
+
+    function escolheClasseTipoInfo(elemento) {
+        tipoInfo = elemento.textContent;
+        if(tipoInfo === 'H') {elemento.setAttribute('class', 'tabela-info_hospital')}
+        else if(tipoInfo === 'P') {elemento.setAttribute('class', 'tabela-info_policial')}
+        else {elemento.setAttribute('class', 'tabela-info_social')}
+    };
+</script>
