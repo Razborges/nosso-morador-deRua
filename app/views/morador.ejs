@@ -51,7 +51,7 @@
     </div>
     <div class="o-detalhe_info">
         <h1>Informações Sociais:</h1>
-        <table class="o-tabela-info">
+        <table class="o-tabela-info" id="tabela-info">
             <% if(!morador.info || morador.info <= 0) { %>
                 <p>Não há informações cadastradas para este morador até o momento.</p>
             <% } else { %>
@@ -88,8 +88,8 @@
                     <label type="hidden" for="instituicao"></label>
                     <input class="inp-gd inp-border" type="text" name="instituicao" value="" placeholder="Nome da Instituição">
                     <label type="hidden" for="data"></label>
-                    <input class="inp-gd inp-border" type="date" name="data" value="" >
-                    <button class="btn-destaque btn-pq" type="submit">+</button>
+                    <input class="inp-data inp-border" type="date" name="data" value="" >
+                    <button class="btn-destaque btn-pq" id="btn-info" type="submit">+</button>
                 </form>
             <% } %>
         </div>
