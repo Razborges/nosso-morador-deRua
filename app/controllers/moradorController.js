@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 module.exports.listar = function(application, req, res){
     var conn = application.config.dbMongo;
     var moradorDao = new application.app.models.MoradorDAO(conn);
@@ -5,14 +7,14 @@ module.exports.listar = function(application, req, res){
 }
 
 module.exports.cadastro = function(application, req, res){
-    res.render('morador-cadastro', { validacao: {}, morador: {} });
+        res.render('morador-cadastro', { validacao: {}, morador: {} });
 }
 
 module.exports.cadastrar = function(application, req, res){
     if(req.session.autorizado) {
         var data_cadastro = new Date();
+        var timeStamp = data_cadastro.getTime();
 
-        console.log(req.body);
         var dadosForm = req.body;
 
         req.assert('nome', '- É obrigatório o preenchimento do nome').notEmpty();
@@ -29,7 +31,20 @@ module.exports.cadastrar = function(application, req, res){
             return;
         }
 
-        dadosForm.foto = [];
+        console.log(req.files.foto);
+
+        var pathOrigem = req.files.foto.path;
+        var nomeImagem = timeStamp + req.files.foto.originalFilename;
+        var pathDestino = './app/uploads/' + nomeImagem;
+
+        fs.rename(pathOrigem, pathDestino, function(err){
+            if(err){
+                res.status(500);
+                return;
+            }
+        });
+
+        dadosForm.foto = [{ imagem: nomeImagem }];
         dadosForm.necessidades = [];
         dadosForm.info = [];
         dadosForm.data_cadastro = data_cadastro;
@@ -43,7 +58,7 @@ module.exports.cadastrar = function(application, req, res){
             msg: '- É necessário efetuar o login/cadastro para acessar esse link.',
             value: ''
         }];
-        res.render('usuario-cadastro', { validacao : erros, usuario: {} });
+        res.render('morador-cadastro', { validacao : erros, morador: {} });
     }
 }
 

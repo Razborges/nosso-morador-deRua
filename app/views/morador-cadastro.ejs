@@ -18,13 +18,13 @@
                     <li class="lista-abertura">- Preencha o formulário com as informações que tenha certeza;</li>
                     <li class="lista-abertura">- Tente ser o mais completo e verdadeiro possível em suas informações;</li>
                     <li class="lista-abertura">- Na dúvida, converse com o morador de rua. Não tenha receio, ele precisa de sua ajuda;</li>
-                    <li class="lista-abertura">- Após o cadastro básico você poderá adicionar outras fotos e necessidades que ele possui.</li>
+                    <li class="lista-abertura">- Após o cadastro básico você poderá adicionar outras fotos e as necessidades que ele possui.</li>
                 </ul>
             <% } %>
         </div>
         <div class="o-form cadastro">
             <h3>Preencha para cadastrar</h3>
-            <form class="o-form" method="post" action="/morador" enctype="multipart/form-data">
+            <form class="o-form" method="post" action="/morador" encType="multipart/form-data">
                 <div class="form-barra">
                     <label type="hidden" for="nome"></label>
                     <input class="inp-gd" type="text" id="nome" name="nome" placeholder="Nome" value="<%= morador.nome %>" autofocus>
@@ -67,7 +67,7 @@
                     <input class="inp-gd" type="text" id="origem" name="origem" placeholder="Cidade de origem" value="<%= morador.origem %>">
                     <textarea id="historico" name="historico" rows="4" cols="39" placeholder="Conte a história dele..."><%= morador.historico %></textarea>
                     <div class="inputfile">
-                        <label for="foto">Clique para adicionar fotos</label>
+                        <label for="foto">Clique para adicionar uma foto</label>
                         <input type="file" id="foto" name="foto">
                     </div>
                 </div>

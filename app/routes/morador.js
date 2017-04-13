@@ -17,6 +17,7 @@ module.exports = function(application){
     });
 
     application.post('/morador', function(req, res){
+        res.setHeader("Access-Control-Allow-Origin", "*");
         application.app.controllers.moradorController.cadastrar(application, req, res);
     });
 
