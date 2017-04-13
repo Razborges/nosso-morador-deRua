@@ -5,7 +5,12 @@
             <img id="foto-apresentacao" src="" alt="Imagem do morador de rua NOME AQUI" width="464" height="464">
         </div>
         <div class="o-apresentacao_info">
-            <h1><%= morador.nome %></h1>
+            <div class="o-detalhe_info-nome">
+                <h1><%= morador.nome %></h1>
+                <% if(sessao.nome) { %>
+                    <a class="editar_link" href="/morador/editar/<%= morador._id %>">Editar</a>
+                <% } %>
+            </div>
             <h2 class="titulo-residente">Residente: <%= morador.cidade %>/<%= morador.uf %></h2>
             <p>Nascido em <%= morador.origem %></p>
             <p class="p-resumo"><%= morador.historico %></p>
@@ -14,9 +19,6 @@
                 <img class="miniatura" src="" alt="Mais uma imagem do morador de rua Nome Aqui" width="115" height="115">
                 <img class="miniatura" src="" alt="Uma imagem do morador de rua Nome Aqui" width="115" height="115">
             </div>
-            <% if(sessao.nome) { %>
-                <a class="editar_link" href="/morador/editar/<%= morador._id %>">Editar</a>
-            <% } %>
         </div>
     </div>
 
@@ -42,9 +44,10 @@
             <% if(sessao.nome) { %>
                 <form class="o-detalhe_form" action="/morador/necessidade/<%= morador._id %>" method="post">
                     <label type="hidden" for="necessidade"></label>
-                    <input class="inp-gd inp-border" type="text" name="necessidade" value="" placeholder="Adicionar necessidade">
+                    <input class="inp-gd inp-border" type="text" name="necessidade" value="" required placeholder="Adicionar necessidade">
                     <button class="btn-destaque btn-pq" type="submit">+</button>
                 </form>
+                <div id="erro-necessidade"></div>
             <% } %>
         </aside>
 
@@ -77,18 +80,18 @@
             <% if(sessao.nome) { %>
                 <form class="o-detalhe_form" action="/morador/info/<%= morador._id %>" method="post">
                     <label type="hidden" for="tipo_info"></label>
-                    <select class="inp-border select-info" id="tipo_info" name="tipo_info">
+                    <select class="inp-border select-info" id="tipo_info" name="tipo_info" required>
                         <option disabled selected value="">Selecione uma opção</option>
                         <option value="H">Atendimento Hospitalar</option>
                         <option value="P">Caso Policial</option>
                         <option value="S">Atendimento Social</option>
                     </select>
                     <label type="hidden" for="info"></label>
-                    <input class="inp-gd inp-border" type="text" name="info" value="" placeholder="Adicionar informação">
+                    <input class="inp-gd inp-border" type="text" name="info" value="" required placeholder="Adicionar informação">
                     <label type="hidden" for="instituicao"></label>
-                    <input class="inp-gd inp-border" type="text" name="instituicao" value="" placeholder="Nome da Instituição">
+                    <input class="inp-gd inp-border" type="text" name="instituicao" value="" required placeholder="Nome da Instituição">
                     <label type="hidden" for="data"></label>
-                    <input class="inp-data inp-border" type="date" name="data" value="" >
+                    <input class="inp-data inp-border" type="date" name="data" value="" required>
                     <button class="btn-destaque btn-pq" id="btn-info" type="submit">+</button>
                 </form>
             <% } %>
