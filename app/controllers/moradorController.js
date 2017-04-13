@@ -42,6 +42,7 @@ module.exports.cadastrar = function(application, req, res){
                 res.status(500);
                 return;
             }
+            delete req.files;
         });
 
         dadosForm.foto = [{ imagem: nomeImagem }];

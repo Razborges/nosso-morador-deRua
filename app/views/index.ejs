@@ -34,12 +34,16 @@
         </div>
     </div>
     <div>
-        <section>
-            <%- include('modelos/listagem_moradores'); %>
-        </section>
-        <div class="o-section_fechamento">
-            <a class="btn-destaque_link btn-xgd" href="/morador">Conheça outras histórias</a>
-        </div>
+        <% if(moradores.length > 0) { %>
+            <section>
+                <%- include('modelos/listagem_moradores'); %>
+            </section>
+            <div class="o-section_fechamento">
+                <a class="btn-destaque_link btn-xgd" href="/morador">Conheça outras histórias</a>
+            </div>
+        <% } else { %>
+            <h1>Cadastre um novo morador de rua!</h1>
+        <% } %>
     </div>
     <div class="o-quemsomos">
         <section class="section-quemsomos">

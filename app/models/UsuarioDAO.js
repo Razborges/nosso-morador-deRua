@@ -30,7 +30,7 @@ UsuarioDAO.prototype.buscar = function(res){
     });
 }
 
-UsuarioDAO.prototype.cadastrar = function(usuario, res){
+UsuarioDAO.prototype.cadastrar = function(usuario, req, res){
     var senha_criptografada = crypto.createHash('md5').update(usuario.senha).digest('hex');
     usuario.senha = senha_criptografada;
     this._connection.open(function(err, mongoClient){
@@ -50,9 +50,8 @@ UsuarioDAO.prototype.cadastrar = function(usuario, res){
                     console.log(err);
                     return;
                 }
-                var id = result.ops[0]._id;
                 mongoClient.close();
-                res.redirect('/usuario/' + id);
+                res.redirect('/usuario');
             });
         });
     });
@@ -117,7 +116,7 @@ UsuarioDAO.prototype.atualizar = function(usuario, res){
     });
 }
 
-UsuarioDAO.prototype.remover = function(id, res){
+UsuarioDAO.prototype.remover = function(id, req, res){
     this._connection.open(function(err, mongoClient){
         if(err){
             console.log(err);
@@ -135,33 +134,14 @@ UsuarioDAO.prototype.remover = function(id, res){
                     console.log(err);
                     return;
                 }
-                res.redirect('/usuarios');
                 mongoClient.close();
-            });
-        });
-    }); 
-}
-
-UsuarioDAO.prototype.detalhe = function(id, res){
-    this._connection.open(function(err, mongoClient){
-        if(err){
-            console.log(err);
-            return;
-        }
-        mongoClient.collection('usuario', function(err, collection){
-            if(err) {
-                mongoClient.close();
-                console.log(err);
-                return;
-            }
-            collection.find(objectId(id)).toArray(function(err, result){
-                if(err){
-                    mongoClient.close();
-                    console.log(err);
-                    return;
-                }
-                res.render('usuario', { usuario : result[0] });
-                mongoClient.close();
+                req.session.destroy(function(err){
+                    if(err) {
+                        console.log(err);
+                        return;
+                    }
+                    res.redirect('/');
+                });
             });
         });
     }); 

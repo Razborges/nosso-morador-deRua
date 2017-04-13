@@ -27,7 +27,7 @@ module.exports.cadastrar = function(application, req, res){
 
     var conn = application.config.dbMongo;
     var usuarioDAO = new application.app.models.UsuarioDAO(conn);
-    usuarioDAO.cadastrar(dadosForm, res);
+    usuarioDAO.cadastrar(dadosForm, req, res);
 }
 
 module.exports.editar = function(application, req, res){
@@ -81,14 +81,11 @@ module.exports.remover = function(application, req, res){
     var id = req.params.id;
     var conn = application.config.dbMongo;
     var usuarioDAO = new application.app.models.UsuarioDAO(conn);
-    usuarioDAO.remover(id, res);
+    usuarioDAO.remover(id, req, res);
 }
 
 module.exports.detalhe = function(application, req, res){
-    var id = req.params.id;
-    var conn = application.config.dbMongo;
-    var usuarioDAO = new application.app.models.UsuarioDAO(conn);
-    usuarioDAO.detalhe(id, res);
+    res.render('usuario');
 }
 
 module.exports.sair = function(application, req, res){

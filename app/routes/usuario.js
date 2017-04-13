@@ -27,7 +27,7 @@ module.exports = function(application){
         application.app.controllers.usuarioController.remover(application, req, res);
     });
 
-    application.get('/usuario/:id', function(req, res){
+    application.get('/usuario', function(req, res){
         application.app.controllers.usuarioController.detalhe(application, req, res);
     });
 }

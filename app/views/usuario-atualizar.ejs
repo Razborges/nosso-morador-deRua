@@ -13,7 +13,10 @@
                 </div>
             <% } else { %>
                 <h1 class="abertura_titulo">Atualização de usuário</h1>
-                <h3>Você pode trocar seu e-mail, nome ou senha.</h3>
+                <h3>Você pode trocar seu e-mail, nome ou senha. Se quiser apagar a sua conta clique no botão abaixo:</h3>
+                <form method="POST" action="/usuario/remover/<%= usuario._id %>">
+                    <button class="btn-destaque" type="submit">Remover minha conta</button>
+                </form>
             <% } %>
         </div>
         <div class="o-form cadastro">
