@@ -47,7 +47,6 @@ module.exports.editar = function(application, req, res){
 }
 
 module.exports.atualizar = function(application, req, res){
-    if(req.session.autorizado) {
         var dadosForm = req.body;
 
         req.assert('nome', '- Preenchimento obrigatório do nome').notEmpty();
@@ -67,14 +66,6 @@ module.exports.atualizar = function(application, req, res){
         var conn = application.config.dbMongo;
         var usuarioDAO = new application.app.models.UsuarioDAO(conn);
         usuarioDAO.atualizar(dadosForm, res);
-    } else {
-        var erros = [ {
-            param: '',
-            msg: '- É necessário efetuar o login/cadastro para acessar esse link.',
-            value: ''
-        }];
-        res.render('usuario-cadastro', { validacao : erros, usuario: {} });
-    }
 }
 
 module.exports.remover = function(application, req, res){

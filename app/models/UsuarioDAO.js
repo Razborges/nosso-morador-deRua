@@ -108,7 +108,7 @@ UsuarioDAO.prototype.atualizar = function(usuario, res){
                         console.log(err);
                         return;
                     }
-                    res.redirect('/');
+                    res.render('usuario');
                     mongoClient.close();
                 }
             );
@@ -184,6 +184,31 @@ UsuarioDAO.prototype.autenticar = function(usuario, req, res){
                     }];
                     res.render('usuario-cadastro', { validacao : erros, usuario: {} });
                 }
+            });
+        });
+    });
+}
+
+UsuarioDAO.prototype.alterarsenha = function(email, req, res) {
+    this._connection.open(function(err, mongoClient){
+        if(err){
+            console.log(err);
+            return;
+        }
+        mongoClient.collection('usuario', function(err, collection){
+            if(err){
+                mongoClient.close();
+                console.log(err);
+                return;
+            }
+            collection.find(email).toArray(function(err, result){
+                if(err){
+                    mongoClient.close();
+                    console.log(err);
+                    return;
+                }
+                res.render('usuario-atualizar', { usuario : result[0], validacao: {} });
+                mongoClient.close();
             });
         });
     });

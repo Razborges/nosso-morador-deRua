@@ -21,3 +21,25 @@ module.exports.autenticar = function(application, req, res) {
     var usuarioDao = new application.app.models.UsuarioDAO(conn);
     usuarioDao.autenticar(dadosForm, req, res);
 }
+
+module.exports.novasenha = function(application, req, res) {
+    console.log('controle nova senha');
+    res.render('novasenha', { validacao : {} });
+}
+
+module.exports.alterarsenha = function(application, req, res) {
+    var dadosForm = req.body;
+    console.log(dadosForm, 'controller alterar senha');
+
+    req.assert('email', '- Necessário utilizar um e-mail válido').notEmpty().isEmail();
+
+    var erros = req.validationErrors();
+    if(erros) {
+        res.render('novasenha', { validacao : erros });
+        return;
+    }
+
+    var conn = application.config.dbMongo;
+    var usuarioDao = new application.app.models.UsuarioDAO(conn);
+    usuarioDao.alterarsenha(dadosForm, req, res);
+}

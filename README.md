@@ -37,8 +37,9 @@ Este projeto já está funcional, mas ainda não está finalizado e também não
 
 Algumas pendências principais:
 
-1. Upload de Fotos não implementado
-1. Tela detalhada de Morador de Rua faltando
+1. Esqueci a senha
+1. Tela de edição de Morador de Rua faltando
+1. Definir as fotos nas views
 1. Layout mobile
 
 
@@ -59,3 +60,4 @@ Processos que estão funcionais:
 1. Formatação de data na tela do morador
 1. Adição de classes conforme o tipo de informação na tela de morador
 1. Validação de formulários
+1. Upload de Fotos implementado
