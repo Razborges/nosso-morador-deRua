@@ -22,7 +22,7 @@ module.exports.cadastrar = function(application, req, res){
         req.assert('uf', '- É obrigatório o preenchimento do estado').notEmpty();
         req.assert('uf', '- Selecione uma opção válida de UF').len(2, 2);
         req.assert('historico', '- É obrigatório o preenchimento do histórico').notEmpty();
-        req.assert('historico', '- O histórico precisa ter pelo menos 30 caracteres').len(30, 1000);
+        req.assert('historico', '- O histórico precisa ter entre 30 e 3500 caracteres.').len(30, 3500);
 
         var erros = req.validationErrors();
 
@@ -30,8 +30,6 @@ module.exports.cadastrar = function(application, req, res){
             res.render('morador-cadastro', { validacao: erros, morador: dadosForm });
             return;
         }
-
-        console.log(req.files.foto);
 
         var pathOrigem = req.files.foto.path;
         var nomeImagem = timeStamp + req.files.foto.originalFilename;
@@ -45,7 +43,7 @@ module.exports.cadastrar = function(application, req, res){
             delete req.files;
         });
 
-        dadosForm.foto = [{ imagem: nomeImagem }];
+        dadosForm.foto = nomeImagem;
         dadosForm.necessidades = [];
         dadosForm.info = [];
         dadosForm.data_cadastro = data_cadastro;

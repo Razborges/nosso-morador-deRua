@@ -2,7 +2,7 @@
 
     <div class="o-apresentacao">
         <div class="o-apresentacao_imagem">
-            <img id="foto-apresentacao" src="" alt="Imagem do morador de rua NOME AQUI" width="464" height="464">
+            <img id="foto-apresentacao" src="http://localhost:8000/uploads/<%= morador.foto %>" alt="Imagem do morador de rua <%= morador.nome %>" width="464" height="464">
         </div>
         <div class="o-apresentacao_info">
             <div class="o-detalhe_info-nome">
@@ -12,13 +12,8 @@
                 <% } %>
             </div>
             <h2 class="titulo-residente">Residente: <%= morador.cidade %>/<%= morador.uf %></h2>
-            <p>Nascido em <%= morador.origem %></p>
-            <p class="p-resumo"><%= morador.historico %></p>
-            <div class="o-apresentacao_miniaturas">
-                <img class="miniatura" src="" alt="Outra imagem do morador de rua Nome Aqui" width="115" height="115">
-                <img class="miniatura" src="" alt="Mais uma imagem do morador de rua Nome Aqui" width="115" height="115">
-                <img class="miniatura" src="" alt="Uma imagem do morador de rua Nome Aqui" width="115" height="115">
-            </div>
+            <p>Nascido em <%= morador.origem %>/<%= morador.uf_origem%></p>
+            <p class="p-resumo"><%= morador.historico.substring(0, 500) %>...</p>
         </div>
     </div>
 

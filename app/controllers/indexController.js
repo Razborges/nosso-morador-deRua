@@ -29,7 +29,6 @@ module.exports.novasenha = function(application, req, res) {
 
 module.exports.alterarsenha = function(application, req, res) {
     var dadosForm = req.body;
-    console.log(dadosForm, 'controller alterar senha');
 
     req.assert('email', '- Necessário utilizar um e-mail válido').notEmpty().isEmail();
 

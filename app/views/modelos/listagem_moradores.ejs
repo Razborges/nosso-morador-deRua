@@ -2,7 +2,7 @@
 <% for(var i = 0; i < moradores.length; i++) { %>
     <div class="o-descricao">
         <div class="retrato">
-            <img src="" alt="Retrato do morador de rua <%= moradores[i].nome %>">
+            <img src="http://localhost:8000/app/uploads/<%= moradores[i].foto %>" alt="Retrato do morador de rua <%= moradores[i].nome %>">
         </div>
         <div class="o-descricao_detalhe">
             <div class="detalhe_nome">
@@ -10,7 +10,7 @@
                 <p class="txt-secundario"><%= moradores[i].cidade %>/<%= moradores[i].uf %></p>
             </div>
             <div>
-                <p><%= moradores[i].origem %></p>
+                <p><%= moradores[i].origem %>/<%= moradores[i].uf_origem%></p>
             </div>
             <div class="o-descricao_necessidades">
 
@@ -31,7 +31,7 @@
         </div>
         <div class="o-descricao_historico">
             <h4 class="titulo-secundario">Minha história:</h4>
-            <p><%= moradores[i].historico %></p>
+            <p><%= moradores[i].historico.substring(0, 800) %>...</p>
             <div class="historico_link">
                 <a class="btn-destaque_link" href="/morador/<%= moradores[i]._id %>">Veja mais...</a>
             </div>

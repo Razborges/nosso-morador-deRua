@@ -42,7 +42,7 @@ MoradorDAO.prototype.listar = function(res){
                 console.log(err);
                 return;
             }
-            collection.find().toArray(function(err, result){
+            collection.find().hint({ $natural: -1 }).toArray(function(err, result){
                 if(err){
                     mongoClient.close();
                     console.log(err);
