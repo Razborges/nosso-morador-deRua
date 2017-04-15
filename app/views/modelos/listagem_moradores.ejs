@@ -1,8 +1,8 @@
 <h1>Últimas histórias adicionadas</h1>
 <% for(var i = 0; i < moradores.length; i++) { %>
     <div class="o-descricao">
-        <div class="retrato">
-            <img src="http://localhost:8000/app/uploads/<%= moradores[i].foto %>" alt="Retrato do morador de rua <%= moradores[i].nome %>">
+        <div>
+            <img class="retrato" src="http://localhost:8000/uploads/<%= moradores[i].foto %>" alt="Retrato do morador de rua <%= moradores[i].nome %>">
         </div>
         <div class="o-descricao_detalhe">
             <div class="detalhe_nome">

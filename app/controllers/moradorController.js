@@ -33,7 +33,7 @@ module.exports.cadastrar = function(application, req, res){
 
         var pathOrigem = req.files.foto.path;
         var nomeImagem = timeStamp + req.files.foto.originalFilename;
-        var pathDestino = './app/uploads/' + nomeImagem;
+        var pathDestino = './app/public/uploads/' + nomeImagem;
 
         fs.rename(pathOrigem, pathDestino, function(err){
             if(err){
