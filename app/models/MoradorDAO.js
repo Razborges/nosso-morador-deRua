@@ -80,6 +80,36 @@ MoradorDAO.prototype.buscar = function(id, res){
     });  
 }
 
+MoradorDAO.prototype.buscarMorador = function(pesquisa, res){
+    this._connection.open(function(err, mongoClient){
+        if(err){
+            console.log(err);
+            return;
+        }
+        mongoClient.collection('morador_rua', function(err, collection){
+            if(err) {
+                mongoClient.close();
+                console.log(err);
+                return;
+            }
+            collection.find({
+                $or: [
+                    { nome: { $eq: pesquisa.buscar }},
+                    {origem: { $eq: pesquisa.buscar }}
+                ]
+            }).toArray(function(err, result){
+                if(err){
+                    mongoClient.close();
+                    console.log(err);
+                    return;
+                }
+                res.render('moradores', { usuario : {}, moradores : result });
+                mongoClient.close();
+            });
+        });
+    });  
+}
+
 MoradorDAO.prototype.editar = function(id, res){
     this._connection.open(function(err, mongoClient){
         if(err){

@@ -68,6 +68,23 @@ module.exports.buscar = function(application, req, res){
     moradorDao.buscar(id, res);
 }
 
+module.exports.buscarMorador = function(application, req, res) {
+    var dadosForm = req.body;
+
+    req.assert('buscar', 'Para buscar é preciso digitar o nome ou a cidade de nascimento do morador de rua.').notEmpty();
+    
+    var erros = req.validationErrors();
+
+    if(erros){
+        res.render('index', { validacao : erros, usuario : {}, moradores : {} });
+        return;
+    }
+
+    var conn = application.config.dbMongo;
+    var moradorDao = new application.app.models.MoradorDAO(conn);
+    moradorDao.buscarMorador(dadosForm, res);
+}
+
 module.exports.editar = function(application, req, res){
     var id = req.params.id;
     var conn = application.config.dbMongo;

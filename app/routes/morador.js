@@ -12,6 +12,10 @@ module.exports = function(application){
         application.app.controllers.moradorController.buscar(application, req, res);
     });
     
+    application.post('/morador/buscar/morador', function(req, res){
+        application.app.controllers.moradorController.buscarMorador(application, req, res);
+    })
+
     application.get('/morador/editar/:id', function(req, res){
         application.app.controllers.moradorController.editar(application, req, res);
     });

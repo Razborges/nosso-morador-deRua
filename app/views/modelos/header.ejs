@@ -17,9 +17,11 @@
                 </a>
             </div>
             <div class="o-busca">
-                <label type="hidden" for="buscar"></label>
-                <input type="text" class="inp-md placeholder-destaque" id="buscar" name="buscar" placeholder="Buscar" value="">
-                <button type="submit">Buscar</button>
+                <form action="/morador/buscar/morador" method="post">
+                    <label type="hidden" for="buscar"></label>
+                    <input type="text" class="inp-md placeholder-destaque" id="buscar" name="buscar" placeholder="Buscar por Nome ou Cidade de Nascimento" required>
+                    <button type="submit">Buscar</button>
+                </form>
             </div>
             <div class="o-login">
                 <% if(sessao.nome) { %>

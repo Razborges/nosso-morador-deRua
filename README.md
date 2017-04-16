@@ -60,3 +60,4 @@ Processos que estão funcionais:
 1. Validação de formulários
 1. Upload/Visualização de Fotos implementado
 1. Sistema simples de redefinir a senha do usuário
+1. Busca por nome ou por cidade de origem do morador de rua

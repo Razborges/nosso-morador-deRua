@@ -1,40 +1,46 @@
-<h1>Últimas histórias adicionadas</h1>
-<% for(var i = 0; i < moradores.length; i++) { %>
+<h1>Histórias adicionadas</h1>
+<% if(moradores.length <= 0) { %>
     <div class="o-descricao">
-        <div>
-            <img class="retrato" src="http://localhost:8000/uploads/<%= moradores[i].foto %>" alt="Retrato do morador de rua <%= moradores[i].nome %>">
-        </div>
-        <div class="o-descricao_detalhe">
-            <div class="detalhe_nome">
-                <h2><%= moradores[i].nome %></h2>
-                <p class="txt-secundario"><%= moradores[i].cidade %>/<%= moradores[i].uf %></p>
-            </div>
-            <div>
-                <p><%= moradores[i].origem %>/<%= moradores[i].uf_origem%></p>
-            </div>
-            <div class="o-descricao_necessidades">
-
-                <% if(moradores[i].necessidades) { %>
-                    <table>
-                        <% if(moradores[i].necessidades.length > 0) { %>
-                            <th class="titulo-destaque">Necessidades Atuais</th>
-                        <% } %>
-                        <% for(var j = 0; j < moradores[i].necessidades.length; j++) { %>
-                            <tr>
-                                <td><%= moradores[i].necessidades[j] %></td>
-                            </tr>
-                        <% } %>
-                    </table>
-                <% } %>
-
-            </div>
-        </div>
-        <div class="o-descricao_historico">
-            <h4 class="titulo-secundario">Minha história:</h4>
-            <p><%= moradores[i].historico.substring(0, 800) %>...</p>
-            <div class="historico_link">
-                <a class="btn-destaque_link" href="/morador/<%= moradores[i]._id %>">Veja mais...</a>
-            </div>
-        </div>
+        <p class="txt-secundario">Nenhum resultado foi encontrado para sua busca.</p>
     </div>
+<% } else {%>
+    <% for(var i = 0; i < moradores.length; i++) { %>
+        <div class="o-descricao">
+            <div>
+                <img class="retrato" src="http://localhost:8000/uploads/<%= moradores[i].foto %>" alt="Retrato do morador de rua <%= moradores[i].nome %>">
+            </div>
+            <div class="o-descricao_detalhe">
+                <div class="detalhe_nome">
+                    <h2><%= moradores[i].nome %></h2>
+                    <p class="txt-secundario"><%= moradores[i].cidade %>/<%= moradores[i].uf %></p>
+                </div>
+                <div>
+                    <p><%= moradores[i].origem %>/<%= moradores[i].uf_origem%></p>
+                </div>
+                <div class="o-descricao_necessidades">
+
+                    <% if(moradores[i].necessidades) { %>
+                        <table>
+                            <% if(moradores[i].necessidades.length > 0) { %>
+                                <th class="titulo-destaque">Necessidades Atuais</th>
+                            <% } %>
+                            <% for(var j = 0; j < moradores[i].necessidades.length; j++) { %>
+                                <tr>
+                                    <td><%= moradores[i].necessidades[j] %></td>
+                                </tr>
+                            <% } %>
+                        </table>
+                    <% } %>
+
+                </div>
+            </div>
+            <div class="o-descricao_historico">
+                <h4 class="titulo-secundario">Minha história:</h4>
+                <p><%= moradores[i].historico.substring(0, 800) %>...</p>
+                <div class="historico_link">
+                    <a class="btn-destaque_link" href="/morador/<%= moradores[i]._id %>">Veja mais...</a>
+                </div>
+            </div>
+        </div>
+    <% } %>
 <% } %>
