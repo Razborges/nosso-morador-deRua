@@ -1,12 +1,12 @@
 # Nosso Morador de Rua
 
-Sistema para cadastro e acompanhamento de moradores de rua por Ong`s ou equipes de Serviço Social.
+Sistema para cadastro e acompanhamento de moradores de rua para Ong`s e/ou equipes de Serviço Social.
 
 Permite o cadastro do morador de rua com as seguintes características:
 
 - Nome
 - Cidade/UF de Moradia
-- Cidade de Origem
+- Cidade/UF de Nascimento
 - Foto
 - Histórico
 
@@ -17,9 +17,13 @@ Após o cadastro realizado o usuário poderá editar para cada morador de rua:
 
 Todo o layout e o respectivo CSS foi criado por mim do zero utilizando a técnica ITCSS para auxiliar na organização do código, com excessão do Normalize.
 
-![Layout da Index](index.jpg "Layout da Index")
+<p align="center">
+<img src="index.jpg" alt="Layout da Index do sistema Nosso Morador de Rua" width="30%" height="30%">
+</p>
 
-![Layout do detalhe do morador](detalheMorador.jpg "Layout do detalhe do morador")
+<p align="center">
+<img src="detalheMorador.jpg" alt="Layout da view detalhe do morador do sistema Nosso Morador de Rua" width="30%" height="30%">
+</p>
 
 ## Tecnologias Utilizadas
 
@@ -37,7 +41,7 @@ Neste projeto estão sendo utilizadas as seguintes tecnologias:
 
 ## Considerações Finais
 
-Este projeto já está funcional, mas ainda não está finalizado e também não possui o seu escopo completamente fechado.
+Este projeto já está bastante avançado, mas ainda não está finalizado faltando pequenos detalhes, e pode ter novas funcionalidades adicionadas a qualquer momento.
 
 #### Lista de tarefas do projeto
 
