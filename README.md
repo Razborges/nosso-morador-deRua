@@ -17,6 +17,10 @@ Após o cadastro realizado o usuário poderá editar para cada morador de rua:
 
 Todo o layout e o respectivo CSS foi criado por mim do zero utilizando a técnica ITCSS para auxiliar na organização do código, com excessão do Normalize.
 
+![Layout da Index](index.jpg "Layout da Index")
+
+![Layout do detalhe do morador](detalheMorador.jpg "Layout do detalhe do morador")
+
 ## Tecnologias Utilizadas
 
 Neste projeto estão sendo utilizadas as seguintes tecnologias:
@@ -35,29 +39,23 @@ Neste projeto estão sendo utilizadas as seguintes tecnologias:
 
 Este projeto já está funcional, mas ainda não está finalizado e também não possui o seu escopo completamente fechado.
 
-Algumas pendências principais:
+#### Lista de tarefas do projeto
 
-1. Tela de edição de Morador de Rua faltando
-1. Layout mobile
-
-
-Processos que estão funcionais:
-
-1. CRUD Morador de Rua back-end
-1. CRUD Usuário back-end
-1. Design
-1. HTML e SASS
-1. Integração tela principal com o bD
-1. Integração formulários de cadastro com o bD
-1. Tela de Listagem de moradores de rua sincronizada com o Back-end
-1. Tela detalhada de Morador de Rua ainda sincronizada com o Back-end
-1. Páginas de erro 404 e 500
-1. Sessão parcialmente aplicada
-1. Criptografia de senha implementada
-1. Autorização de Sessão com os respectivos bloqueios
-1. Formatação de data na tela do morador
-1. Adição de classes conforme o tipo de informação na tela de morador
-1. Validação de formulários
-1. Upload/Visualização de Fotos implementado
-1. Sistema simples de redefinir a senha do usuário
-1. Busca por nome ou por cidade de origem do morador de rua
+- [x] CRUD Morador de Rua
+- [x] CRUD Usuário
+- [x] Design
+- [x] HTML e SASS
+- [x] Integração view principal com backend
+- [x] Integração formulários com backend
+- [x] Páginas de erro 404 e 500
+- [x] Implementação de Sessão
+- [x] Criptografia de senha Usuário
+- [x] Autorização de Sessão com os respectivos bloqueios
+- [x] Formatação de data na view do Morador de Rua
+- [x] Adição de classes conforme o tipo de informação na view de Morador de Rua
+- [x] Validação de formulários
+- [x] Upload/Visualização de imagens dos Moradores de Rua
+- [x] Redefinir a senha do Usuário (sistema simples)
+- [x] Busca por nome ou por cidade de origem do Morador de Rua
+- [ ] Refatoração da view de edição de Morador de Rua
+- [ ] Layout mobile
