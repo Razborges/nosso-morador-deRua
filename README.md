@@ -61,5 +61,3 @@ Este projeto já está bastante avançado, mas ainda não está finalizado falta
 - [x] Upload/Visualização de imagens dos Moradores de Rua
 - [x] Redefinir a senha do Usuário (sistema simples)
 - [x] Busca por nome ou por cidade de origem do Morador de Rua
-- [ ] Refatoração da view de edição de Morador de Rua
-- [ ] Layout mobile

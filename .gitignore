@@ -3,5 +3,4 @@ node_modules
 .vscode
 .DS_Store
 
-app/views/exemplos
-app/public/uploads/*
+app/public/uploads/*.jpg
